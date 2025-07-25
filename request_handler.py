@@ -1,5 +1,7 @@
 import requests
 import socket
+import urllib3
+import warnings
 
 WORK_PROXY = "127.0.0.1"
 WORK_PROXY_PORT = "9000"
@@ -19,9 +21,11 @@ def get_page(url: str) -> ...:
             "https": proxy_url
         }
 
-    response = requests.get(url, headers=headers, proxies=proxies, verify=False)
-    response.raise_for_status()
-    return response.text
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", urllib3.exceptions.InsecureRequestWarning)
+        response = requests.get(url, headers=headers, proxies=proxies, verify=False)
+        response.raise_for_status()
+        return response.text
 
 
 def is_office_network():
