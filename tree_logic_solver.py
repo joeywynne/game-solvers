@@ -16,10 +16,8 @@ Add display
 - outlines of shapes
 """
 from board import read_board, Board
-from pathlib import Path
 import numpy as np
-
-EXAMPLES = Path("examples")
+from pathlib import Path
 
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
@@ -92,10 +90,11 @@ def square_blocks_all_of_shape(board: Board) -> bool:
 
 # TODO: add selection of data sample
 # TODO: add logging of how we solved
-# TODO: add method of generating tree puzzles
 # TODO: add tests
 
-for i in range(5):
-    board = read_board(EXAMPLES / f"{i + 1}.csv")
-    solved = solve_board(board)
-    board.display(solved)
+if __name__ == "__main__":
+    csv_path = Path("sporcle_games/tree_logic_puzzles/tree-logic-puzzle-i.csv")
+    for i in range(5):
+        board = read_board(csv_path)
+        solved = solve_board(board)
+        board.display(solved)
