@@ -48,7 +48,7 @@ class Board:
         """
         return state
     
-    def display(self, solved: bool, state_type: str="current"):
+    def display(self, solved: bool | None = None, state_type: str="current"):
         n = self.num_shapes
         colours = cm.tab10(range(n))
 
@@ -76,8 +76,9 @@ class Board:
         ax.set_yticklabels(np.arange(rows)[::-1])
         ax.grid(False)
         ax.set_aspect('equal')
-        title = "Solved!" if solved else "Failed..."
-        ax.set_title(title)
+        if solved is not None:
+            title = "Solved!" if solved else "Failed..."
+            ax.set_title(title)
 
         plt.show()
     
@@ -91,8 +92,12 @@ class Board:
         # T is 2
         square = self.board_state[square_coords]
         square.symbol_id = 2
-        for blocked_square in self.get_blocked_squares(square):
-            self.place_dash(blocked_square.coords)
+        # Set blocked squares and rest of shape to dash (1)
+        squares_to_dash = self.get_blocked_squares(square) + self.get_squares_of_shape(square.shape_id)
+        deduped_coords = set(square.coords for square in squares_to_dash).difference([square_coords])
+        for coords in deduped_coords:
+            self.place_dash(coords)
+ 
 
     def board_shape_ids(self) -> np.ndarray:
         return np.array([[cell.shape_id for cell in row] for row in self.board_state])

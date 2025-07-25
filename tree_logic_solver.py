@@ -2,17 +2,14 @@
 Logic - ask mary
 1. If Column, row or shape has only one option - fill it with T
 2. If placing a T would block a shape from being able to have a T, it can not be a T
-2. If all of shape in one row/column then all other squares in that row/column are -
-3. If 2 shapes exist only in 2 columns/rows then all others in those rows/columns are - (same as 2 but for n=2, n=3 etc)
+3. If all of shape in one row/column then all other squares in that row/column are -
+4. If 2 shapes exist only in 2 columns/rows then all others in those rows/columns are - (same as 2 but for n=2, n=3 etc)
 
 Make a move
 1. If adding -, then nothing
 2. If adding T then fill the rest of the shape, row, column and surroundings with -
 
 Add logger to explain the moves made (narration)
-Add display
-- with coloured grid
-- before and after
 - outlines of shapes
 """
 from board import read_board, Board
@@ -24,7 +21,8 @@ def solve_board(board: Board) -> bool:
     while not board.is_solved:
         changes = [
             is_only_one_square_available(board),
-            square_blocks_all_of_shape(board)
+            square_blocks_all_of_shape(board),
+            is_row_col_single_colour(board)
         ]
         if any(changes):
             continue
@@ -39,7 +37,7 @@ def is_only_one_square_available(board: Board) -> bool:
         available_idx = np.where([r.symbol_id == 0 for r in row])[0]
         if len(available_idx) == 1:
             # 1 available - this is a tree
-            board.place_tree((row_idx, available_idx[0]))
+            board.place_tree((row_idx, int(available_idx[0])))
             return True
     
     # col
@@ -47,7 +45,7 @@ def is_only_one_square_available(board: Board) -> bool:
         available_idx = np.where([c.symbol_id == 0 for c in col])[0]
         if len(available_idx) == 1:
             # 1 available - this is a tree
-            board.place_tree((available_idx[0], col_idx))
+            board.place_tree((int(available_idx[0]), col_idx))
             return True
     
     # Shape
@@ -56,7 +54,7 @@ def is_only_one_square_available(board: Board) -> bool:
         available_idx = np.where([s.symbol_id == 0 for s in group_squares])[0]
         if len(available_idx) == 1:
             # 1 available - this is a tree
-            board.place_tree((group_squares[available_idx[0]].coords))
+            board.place_tree((group_squares[int(available_idx[0])].coords))
             return True
 
     return False
@@ -88,13 +86,66 @@ def square_blocks_all_of_shape(board: Board) -> bool:
                 return True
     return False
 
+def is_row_col_single_colour(board: Board) -> bool:
+    """If a row/col is only one colour the rest of the shape cannot be a tree
+    
+    Note we only consider available squares.
+    """
+    # row
+    for row_idx, row in enumerate(board.board_state):
+        msk = [s.symbol_id==0 for s in row]
+        available_idx = row[msk]
+        if len(available_idx) == 0:
+            continue
+        shape_ids = [s.shape_id for s in available_idx]
+        if all([s == shape_ids[0] for s in shape_ids]):
+            # We have a row with only one shape_id.
+            # All other values with this shape_id must be -
+            shape = board.get_squares_of_shape(shape_id=shape_ids[0])
+
+            squares_to_update = [
+                square for square in shape
+                if square.coords[0] != row_idx 
+            ]
+            if all(s.symbol_id != 0 for s in squares_to_update):
+                continue
+            for square in squares_to_update:
+                board.place_dash(square.coords)
+            return True
+    
+    # col
+    for col_idx, col in enumerate(board.board_state.T):
+        msk = [s.symbol_id==0 for s in col]
+        available_idx = col[msk]
+        if len(available_idx) == 0:
+            continue
+
+        shape_ids = [s.shape_id for s in available_idx]
+        if all([s == shape_ids[0] for s in shape_ids]):
+            # We have a row with only one shape_id.
+            # All other values with this shape_id must be -
+            shape = board.get_squares_of_shape(shape_id=shape_ids[0])
+
+            squares_to_update = [
+                square for square in shape
+                if square.coords[1] != col_idx 
+            ]
+            if all(s.symbol_id != 0 for s in squares_to_update):
+                continue
+            for square in squares_to_update:
+                board.place_dash(square.coords)
+            return True
+    return False
+
+
 # TODO: add selection of data sample
 # TODO: add logging of how we solved
 # TODO: add tests
 
+suffixes = ["v"] # ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
 if __name__ == "__main__":
-    csv_path = Path("sporcle_games/tree_logic_puzzles/tree-logic-puzzle-i.csv")
-    for i in range(5):
+    for suffix in suffixes:
+        csv_path = Path("sporcle_games")/"tree_logic_puzzles"/f"trees-logic-puzzle-{suffix}.csv"
         board = read_board(csv_path)
         solved = solve_board(board)
         board.display(solved)
