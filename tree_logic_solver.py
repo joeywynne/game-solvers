@@ -23,10 +23,10 @@ def solve_board(board: Board) -> bool:
     while not board.is_solved:
         changes = [
             is_only_one_square_available(board),
-            square_blocks_all_of_shape(board),
-            any_n_rows_cols_only_n_colours(board, 1),
-            any_n_rows_cols_only_n_colours(board, 2)
+            square_blocks_all_of_shape(board)
         ]
+        for n in range(board.board_state.shape[0]):
+            changes.append(any_n_rows_cols_only_n_colours(board, n + 1))
         if any(changes):
             continue
         return False

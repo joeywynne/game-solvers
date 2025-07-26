@@ -5,6 +5,7 @@ bs4==0.0.2
 requests==2.32.4
 lxml==6.0.0
 rich==14.1.0
+tqdm==4.67.1
 
 black==25.1.0
 flake8==7.3.0
