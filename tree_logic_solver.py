@@ -15,6 +15,8 @@ Add logger to explain the moves made (narration)
 from board import read_board, Board
 import numpy as np
 from pathlib import Path
+from logger import LOG
+from itertools import combinations
 
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
@@ -22,7 +24,8 @@ def solve_board(board: Board) -> bool:
         changes = [
             is_only_one_square_available(board),
             square_blocks_all_of_shape(board),
-            is_row_col_single_colour(board)
+            any_n_rows_cols_only_n_colours(board, 1),
+            any_n_rows_cols_only_n_colours(board, 2)
         ]
         if any(changes):
             continue
@@ -32,37 +35,40 @@ def solve_board(board: Board) -> bool:
 def is_only_one_square_available(board: Board) -> bool:
     """Place a T if there is only one square available in a row, column or square."""
 
-    def check_one_square_available(group_to_scan: np.ndarray | list) -> bool:
-        """For any given group check whether only one square is available
-
-        Returns: int index if one square, else -1
+    def check_one_square_available(group_to_scan: np.ndarray | list) -> tuple:
+        """For any given group check whether only one square is available.
         
         Here group is row/col/shape
         """
         available_idx = np.where([g.symbol_id == 0 for g in group_to_scan])[0]
         if len(available_idx) != 1:
-            return False
-        board.place_tree(group_to_scan[available_idx[0]].coords)
-        return True
+            return tuple()
+        coords = group_to_scan[available_idx[0]].coords
+        board.place_tree(coords)
+        return coords
 
+    success_log_message = "Only one available spot found for {} number {} with coordinates {}. Placing a tree."
     # row
-    for row in board.board_state:
+    for row_idx, row in enumerate(board.board_state):
         res = check_one_square_available(row)
         if res:
-            return res
+            LOG.info(success_log_message.format("row", row_idx, str(res)))
+            return True
     
     # col
-    for col in board.board_state.T:
+    for col_idx, col in enumerate(board.board_state.T):
         res = check_one_square_available(col)
         if res:
-            return res
+            LOG.info(success_log_message.format("col", col_idx, str(res)))
+            return True
     
     # Shape
     groups = board.get_groups()
-    for group_squares in groups.values():
+    for group_id, group_squares in groups.items():
         res = check_one_square_available(group_squares)
         if res:
-            return res
+            LOG.info(success_log_message.format("shape", group_id, str(res)))
+            return True
 
     return False
         
@@ -90,50 +96,66 @@ def square_blocks_all_of_shape(board: Board) -> bool:
             if not available_squares:
                 # Group has no available squares and has no T - SQUARE BLOCKS
                 board.place_dash(square.coords)
+                LOG.info(f"The square at {square.coords} would block shapes if it was a tree. Placing a dash")
                 return True
     return False
 
-def is_row_col_single_colour(board: Board) -> bool:
-    """If a row/col is only one colour the rest of the shape cannot be a tree
+def any_n_rows_cols_only_n_colours(board: Board, num_colours: int) -> bool:
+    """If a group of n rows/cols is made of the same n colours the rest of those n shapes are dashes.
     
     Note we only consider available squares.
     """
-    def check_group_single_colour(group_to_scan: np.ndarray | list) -> bool:
-        """For any given group check whether only one square is available
-
-        Returns: int index if one square, else -1
+    def check_group_n_colours(groups_to_scan: np.ndarray | list, num_colours: int) -> bool:
+        """For any given group check it is made up of the exactly <num_colours> colours.
         
+        The colours must be the same in each row
         Here group is row/col
         """
-        available_msk = [g.symbol_id == 0 for g in group_to_scan]
-        available_squares = group_to_scan[available_msk]
-        if len(available_squares) == 0:
+        available_squares_per_group = {
+            i: [g for g in group if g.symbol_id == 0]
+            for i, group in enumerate(groups_to_scan)
+        }
+
+        if any(len(available_squares) == 0 for available_squares in available_squares_per_group.values()):
             # Nothing available, nothing to do here
             return False
 
-        shape_ids = [s.shape_id for s in available_squares]
-        if all([s == shape_ids[0] for s in shape_ids]):
-            # We have a group with only one shape_id.
-            # All other values in this shape must be dashes
-            shape = board.get_squares_of_shape(shape_id=shape_ids[0])
+        unique_shape_ids = {
+           i: np.unique([s.shape_id for s in available_squares])
+           for i, available_squares in available_squares_per_group.items()
+        }
+        
+        # Need to check each group has the same unique shape ids
+        # and length is equal to num_colours
+        first = list(unique_shape_ids.values())[0]
+        if all(np.array_equal(first, u) for u in unique_shape_ids.values()) and len(first) == num_colours:
+            # We have a group with exactly <num_colours> shape_ids.
+            # All other values in these shapes must be dashes
+            shape_squares = [square for i in first for square in board.get_squares_of_shape(shape_id=i)]
 
-            squares_to_update = [s for s in shape if s not in group_to_scan]
+            squares_to_update = [s for s in shape_squares if s not in groups_to_scan.flatten()]
             if all(s.symbol_id != 0 for s in squares_to_update):
                 return False
             for square in squares_to_update:
                 board.place_dash(square.coords)
             return True
 
-    for row in board.board_state:
-        res = check_group_single_colour(row)
+    success_log_msg = "The squares in {} numbers {} only contain squares from {} shapes. The rest of the shapes are dashes."
+    for rows in combinations(board.board_state, num_colours):
+        res = check_group_n_colours(np.vstack(rows), num_colours=num_colours)
         if res:
-            return res
+            row_numbers = [i.coords[0] for i in np.vstack(rows)[:, 0]]
+
+            LOG.info(success_log_msg.format("row", row_numbers, num_colours))
+            return True
         
     # cols
-    for col in board.board_state.T:
-        res = check_group_single_colour(col)
+    for cols in combinations(board.board_state.T, num_colours):
+        res = check_group_n_colours(np.vstack(cols), num_colours=num_colours)
         if res:
-            return res
+            col_numbers = [i.coords[1] for i in np.vstack(cols)[:, 0]]
+            LOG.info(success_log_msg.format("col", col_numbers, num_colours))
+            return True
     return False
 
 
@@ -141,7 +163,7 @@ def is_row_col_single_colour(board: Board) -> bool:
 # TODO: add logging of how we solved
 # TODO: add tests
 
-suffixes = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
+suffixes = ["vi"] # ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
 if __name__ == "__main__":
     for suffix in suffixes:
         csv_path = Path("sporcle_games")/"tree_logic_puzzles"/f"trees-logic-puzzle-{suffix}.csv"

@@ -2,7 +2,9 @@
 from sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
 from tree_logic_solver import read_board, solve_board
 import time
+from logger import set_log_level, LOG
 
+set_log_level(LOG, "WARN")
 
 score_count = {
     "solved": 0,
