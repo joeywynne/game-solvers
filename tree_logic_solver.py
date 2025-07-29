@@ -14,22 +14,28 @@ Add logger to explain the moves made (narration)
 """
 from board import read_board, Board
 import numpy as np
-from pathlib import Path
 from logger import LOG
 from itertools import combinations
+from sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
 
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
     while not board.is_solved:
-        changes = [
-            is_only_one_square_available(board),
-            square_blocks_all_of_shape(board)
-        ]
-        for n in range(board.board_state.shape[0]):
-            changes.append(any_n_rows_cols_only_n_colours(board, n + 1))
-        if any(changes):
+        # We restart the loop if any of the rules causes a change
+        # Try to run cheap tests first
+        if is_only_one_square_available(board):
             continue
-        return False
+
+        if square_blocks_all_of_shape(board):
+            continue
+
+        for n in range(1, board.board_state.shape[0] + 1):
+            if any_n_rows_cols_only_n_colours(board, n):
+                break
+        else:
+            # None of the strategies made progress
+            return False
+
     return True
         
 def is_only_one_square_available(board: Board) -> bool:
@@ -121,40 +127,44 @@ def any_n_rows_cols_only_n_colours(board: Board, num_colours: int) -> bool:
             return False
 
         unique_shape_ids = {
-           i: np.unique([s.shape_id for s in available_squares])
+           i: set(s.shape_id for s in available_squares)
            for i, available_squares in available_squares_per_group.items()
         }
         
         # Need to check each group has the same unique shape ids
         # and length is equal to num_colours
-        first = list(unique_shape_ids.values())[0]
-        if all(np.array_equal(first, u) for u in unique_shape_ids.values()) and len(first) == num_colours:
+        first = unique_shape_ids[0]
+        if all(first == u for u in unique_shape_ids.values()) and len(first) == num_colours:
             # We have a group with exactly <num_colours> shape_ids.
             # All other values in these shapes must be dashes
-            shape_squares = [square for i in first for square in board.get_squares_of_shape(shape_id=i)]
+            shape_squares = {
+                square.coords for i in first for square in board.get_squares_of_shape(shape_id=i)
+                if square.symbol_id == 0
+            }
+            group_squares = {s.coords for group in groups_to_scan for s in group}
+            squares_to_update = shape_squares.difference(group_squares)
 
-            squares_to_update = [s for s in shape_squares if s not in groups_to_scan.flatten()]
-            if all(s.symbol_id != 0 for s in squares_to_update):
+            if not squares_to_update:
                 return False
-            for square in squares_to_update:
-                board.place_dash(square.coords)
+            for square_coords in squares_to_update:
+                board.place_dash(square_coords)
             return True
 
     success_log_msg = "The squares in {} numbers {} only contain squares from {} shapes. The rest of the shapes are dashes."
-    for rows in combinations(board.board_state, num_colours):
-        res = check_group_n_colours(np.vstack(rows), num_colours=num_colours)
-        if res:
-            row_numbers = [i.coords[0] for i in np.vstack(rows)[:, 0]]
 
-            LOG.info(success_log_msg.format("row", row_numbers, num_colours))
+    for row_idxs in combinations(range(board.size), num_colours):
+        selected_rows = [board.board_state[i] for i in row_idxs]
+        res = check_group_n_colours(selected_rows, num_colours=num_colours)
+        if res:
+            LOG.info(success_log_msg.format("row", row_idxs, num_colours))
             return True
         
     # cols
-    for cols in combinations(board.board_state.T, num_colours):
-        res = check_group_n_colours(np.vstack(cols), num_colours=num_colours)
+    for col_idxs in combinations(range(board.size), num_colours):
+        selected_cols = [board.board_state[:, i] for i in col_idxs]
+        res = check_group_n_colours(selected_cols, num_colours=num_colours)
         if res:
-            col_numbers = [i.coords[1] for i in np.vstack(cols)[:, 0]]
-            LOG.info(success_log_msg.format("col", col_numbers, num_colours))
+            LOG.info(success_log_msg.format("col", col_idxs, num_colours))
             return True
     return False
 
@@ -163,10 +173,11 @@ def any_n_rows_cols_only_n_colours(board: Board, num_colours: int) -> bool:
 # TODO: add logging of how we solved
 # TODO: add tests
 
-suffixes = ["vi"] # ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
+suffixes = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
 if __name__ == "__main__":
-    for suffix in suffixes:
-        csv_path = Path("sporcle_games")/"tree_logic_puzzles"/f"trees-logic-puzzle-{suffix}.csv"
+    for csv_path in DOWNLOAD_BASE_PATH.iterdir():
         board = read_board(csv_path)
         solved = solve_board(board)
-        board.display(solved)
+        if not solved:
+            board.display(solved, str(csv_path))
+            exit()

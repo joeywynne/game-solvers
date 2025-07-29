@@ -11,6 +11,8 @@ from rich.progress import (
     TimeElapsedColumn,
     TimeRemainingColumn,
 )
+import cProfile
+import pstats
 
 
 set_log_level(LOG, "WARN")
@@ -30,27 +32,35 @@ progress_bar = Progress(
     TimeRemainingColumn(),
 )
 
-start = time.time()
-with progress_bar as p:
-    task = p.add_task("Solving...", total=len(list(DOWNLOAD_BASE_PATH.iterdir())))
+def main():
+    start = time.time()
+    with progress_bar as p:
+        task = p.add_task("Solving...", total=len(list(DOWNLOAD_BASE_PATH.iterdir())))
 
-    for file_path in DOWNLOAD_BASE_PATH.iterdir():
-        board = read_board(file_path)
-        solved = solve_board(board)
+        for file_path in DOWNLOAD_BASE_PATH.iterdir():
+            board = read_board(file_path)
+            solved = solve_board(board)
 
-        if solved:
-            score_count["solved"] += 1
-        else:
-            score_count["failed"] += 1
+            if solved:
+                score_count["solved"] += 1
+            else:
+                score_count["failed"] += 1
 
-        p.advance(task)
+            p.advance(task)
 
-total_tests = sum(score_count.values())
-end = time.time()
+    total_tests = sum(score_count.values())
+    end = time.time()
 
-print("Results:")
-print(f"Number of tests ran: {total_tests}")
-print(f"Solved: {score_count["solved"]} ({100 * score_count["solved"] / total_tests :2f}%)")
-print(f"Failed: {score_count["failed"]} ({100 * score_count["failed"] / total_tests :2f}%)")
-print()
-print(f"Tests ran in: {end - start} seconds")
+    print("Results:")
+    print(f"Number of tests ran: {total_tests}")
+    print(f"Solved: {score_count["solved"]} ({100 * score_count["solved"] / total_tests :2f}%)")
+    print(f"Failed: {score_count["failed"]} ({100 * score_count["failed"] / total_tests :2f}%)")
+    print()
+    print(f"Tests ran in: {end - start} seconds")
+
+
+if __name__ == "__main__":
+    cProfile.run('main()', 'profile_output.prof')
+
+    p = pstats.Stats('profile_output.prof')
+    p.strip_dirs().sort_stats('cumulative').print_stats(20)

@@ -48,7 +48,7 @@ class Board:
         """
         return state
     
-    def display(self, solved: bool | None = None, state_type: str="current"):
+    def display(self, solved: bool | None = None, sub_title: str = "", state_type: str="current"):
         n = self.num_shapes
         colours = cm.tab10(range(n))
 
@@ -78,7 +78,9 @@ class Board:
         ax.set_aspect('equal')
         if solved is not None:
             title = "Solved!" if solved else "Failed..."
-            ax.set_title(title)
+        if sub_title:
+            title += "\n" + sub_title
+        ax.set_title(title)
 
         plt.show()
     
@@ -156,11 +158,19 @@ class Board:
 
     @property
     def num_shapes(self):
-        return len(np.unique(self.board_shape_ids().flatten()))
+        return len(set(self.board_shape_ids().flatten()))
     
     @property
     def is_solved(self):
         return not (self.board_symbols() == 0).any()
+    
+    @property
+    def size(self):
+        """Return number of rows in board.
+        
+        Note: board is always square.
+        """
+        return len(self.board_state)
 
 
 def read_board(file_path: Path) -> Board:
