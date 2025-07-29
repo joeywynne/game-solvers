@@ -17,26 +17,34 @@ import numpy as np
 from logger import LOG
 from itertools import combinations
 from sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
+from pathlib import Path
+from copy import deepcopy
 
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
-    while not board.is_solved:
+    while board.is_live:
         # We restart the loop if any of the rules causes a change
         # Try to run cheap tests first
         if is_only_one_square_available(board):
             continue
 
-        if square_blocks_all_of_shape(board):
+        if square_blocks_all(board):
             continue
 
         for n in range(1, board.board_state.shape[0] + 1):
             if any_n_rows_cols_only_n_colours(board, n):
                 break
+
+        # None of the strategies made progress
+        # find a contradiction in one of the available options
+        if find_contradiction(board):
+            continue
+
         else:
-            # None of the strategies made progress
+            # No solution found
             return False
 
-    return True
+    return board.is_solved
         
 def is_only_one_square_available(board: Board) -> bool:
     """Place a T if there is only one square available in a row, column or square."""
@@ -79,8 +87,11 @@ def is_only_one_square_available(board: Board) -> bool:
     return False
         
         
-def square_blocks_all_of_shape(board: Board) -> bool:
-    """If square being tree blocks all of another shape it is not a tree."""
+def square_blocks_all(board: Board) -> bool:
+    """If square being tree blocks all of another shape/row/col it is not a tree.
+    
+    Note: doesn't count if it blocks its own shape/col/row
+    """
     empty_squares = board.get_empty_squares()
     groups = board.get_groups()
 
@@ -103,6 +114,27 @@ def square_blocks_all_of_shape(board: Board) -> bool:
                 # Group has no available squares and has no T - SQUARE BLOCKS
                 board.place_dash(square.coords)
                 LOG.info(f"The square at {square.coords} would block shapes if it was a tree. Placing a dash")
+                return True
+
+        # rows
+        row_idx, col_idx = square.coords
+        for idx, row in enumerate(board.board_state):
+            if idx == row_idx:
+                continue
+            available_row = [s for s in row if s.symbol_id == 0]
+            if available_row and all(s in blocked_squares for s in available_row):
+                board.place_dash(square.coords)
+                LOG.info(f"Square at {square.coords} would block entire row {idx}. Placing a dash.")
+                return True
+        
+        # cols
+        for idx, col in enumerate(board.board_state.T):
+            if idx == col_idx:
+                continue
+            available_col = [s for s in col if s.symbol_id == 0]
+            if available_col and all(s in blocked_squares for s in available_col):
+                board.place_dash(square.coords)
+                LOG.info(f"Square at {square.coords} would block entire column {idx}. Placing a dash.")
                 return True
     return False
 
@@ -168,16 +200,70 @@ def any_n_rows_cols_only_n_colours(board: Board, num_colours: int) -> bool:
             return True
     return False
 
+def find_contradiction(board: Board) -> bool:
+    """Attempt to locate a contradiction by recursively solving
+    
+    Try the groups with smallest number of possibilities first
+    """
+    sorted_possibilities = get_sorted_possibilities(board)
+    for p in sorted_possibilities:
+        for square in p:
+            board_copy = deepcopy(board)
+            board_copy.place_tree(square.coords)
+            LOG.info(f"Attempting to place a tree at {square.coords}")
+            # Check contradiction
+            solved_copy = solve_board(board_copy)
+
+            if solved_copy:
+                LOG.info(f"Attempt to place a tree at {square.coords} was successful")
+                # Replace the original with the solved version
+                board.set_board_state(board_copy.board_state)
+                return True
+
+            else:
+                LOG.info(f"Attempt to place a tree at {square.coords} was unsuccessful")
+                if board_copy.is_valid():
+                    # Can't say anything - no evidence. Try the next
+                    LOG.info("No contradiction - trying next option")
+                    continue
+                LOG.info("Contradiction - place a -")
+                board.place_dash(square.coords)
+                return True
+
+def get_sorted_possibilities(board: Board) -> list[list]:
+    """Return a list of options to try.
+    
+    Rows/Cols/Groups where no symbol placed
+    Sorted on length of the list of possible squares in the option
+    """
+    possibilities = []
+    for row in board.board_state:
+        avail_row = [r for r in row if r.symbol_id == 0]
+        if avail_row:
+            possibilities.append(avail_row)
+    for col in board.board_state.T:
+        avail_col = [c for c in col if c.symbol_id == 0]
+        if avail_col:
+            possibilities.append(avail_col)
+    for group in board.get_groups().values():
+        avail_group = [g for g in group if g.symbol_id == 0]
+        if avail_group:
+            possibilities.append(avail_group)
+    # sort list by length of the options
+    return sorted(possibilities, key= lambda x: len(x))
+
 
 # TODO: add selection of data sample
 # TODO: add logging of how we solved
 # TODO: add tests
-
-suffixes = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"]
 if __name__ == "__main__":
-    for csv_path in DOWNLOAD_BASE_PATH.iterdir():
-        board = read_board(csv_path)
-        solved = solve_board(board)
-        if not solved:
-            board.display(solved, str(csv_path))
-            exit()
+    csv_path = DOWNLOAD_BASE_PATH / "trees-logic-puzzle-100.csv"
+    board = read_board(csv_path)
+    solved = solve_board(board)
+    board.display(solved)
+#    for csv_path in DOWNLOAD_BASE_PATH.iterdir():
+#        board = read_board(csv_path)
+#        solved = solve_board(board)
+#        if not solved:
+#            board.display(solved, str(csv_path))
+#            exit()

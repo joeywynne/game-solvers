@@ -6,6 +6,7 @@ import json
 import numpy as np
 from pathlib import Path
 from request_handler import get_page
+from logger import LOG
 
 SPORCLE_URL = "https://www.sporcle.com"
 KATIE_QUIZZES_BASE = f"{SPORCLE_URL}/user/Katie_Wandering/quizzes"
@@ -20,7 +21,7 @@ def get_tree_puzzle_links(base_url: Path) -> list[str]:
     page = 1
     first_quiz_on_page = "None"
     while True:
-        print(f"Querying page: {base_url}/{page}")
+        LOG.info(f"Querying page: {base_url}/{page}")
         page_text = get_page(f"{base_url}/{page}")
         soup = BeautifulSoup(StringIO(page_text), "html.parser")
         scripts_js = soup.find_all("script", {"type": "text/javascript"})
@@ -56,7 +57,7 @@ def get_tree_puzzle_links(base_url: Path) -> list[str]:
 
 def parse_tree_game_page(url: str) -> np.ndarray:
     """Parses a single Tree logic puzzle from a url"""
-    print(f"Querying page: {url}")
+    LOG.info(f"Querying page: {url}")
     page_text = get_page(f"{url}")
     soup = BeautifulSoup(StringIO(page_text), "html.parser")
     scripts_js = soup.find_all("script", {"type": "text/javascript"})
@@ -109,7 +110,7 @@ def download_sporcle_tree_games(limit: int=-1):
         if i >= limit and limit >= 0:
             return
         name = link.split("/")[-1]
-        print(f"Creating csv for {link}")
+        LOG.info(f"Creating csv for {link}")
         tree_game = parse_tree_game_page(link)
         save_grid_as_csv(tree_game, DOWNLOAD_BASE_PATH/f"{name}.csv")
 

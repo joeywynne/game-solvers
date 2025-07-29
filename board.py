@@ -76,8 +76,9 @@ class Board:
         ax.set_yticklabels(np.arange(rows)[::-1])
         ax.grid(False)
         ax.set_aspect('equal')
+        title = ""
         if solved is not None:
-            title = "Solved!" if solved else "Failed..."
+            title += "Solved!" if solved else "Failed..."
         if sub_title:
             title += "\n" + sub_title
         ax.set_title(title)
@@ -107,8 +108,8 @@ class Board:
     def board_symbols(self) -> np.ndarray:
         return np.array([[cell.symbol_id for cell in row] for row in self.board_state])
     
-    def get_squares_with_symbol(self, symbol_id: int) -> list[tuple]:
-        """Get the coords of squares with given symbol id """
+    def get_squares_with_symbol(self, symbol_id: int) -> list[Square]:
+        """Get the squares with given symbol id."""
         coords = np.where(self.board_symbols() == symbol_id)
         # Warning must be standardised as ints
         return [self.board_state[coord] for coord in zip(*coords)]
@@ -155,6 +156,11 @@ class Board:
             squares = self.get_squares_of_shape(i)
             result[i] = squares
         return result
+    
+    def set_board_state(self, board_state: np.ndarray) -> None:
+        """Update the board state with a new np.ndarray"""
+        # TODO add validate
+        self.board_state = board_state
 
     @property
     def num_shapes(self):
@@ -162,7 +168,29 @@ class Board:
     
     @property
     def is_solved(self):
+        return self.is_valid() and self.is_full
+    
+    @property
+    def is_full(self):
         return not (self.board_symbols() == 0).any()
+    
+    @property
+    def is_live(self):
+        return self.is_valid() and not self.is_full
+    
+    def is_valid(self) -> bool:
+        def is_group_valid(group) -> bool:
+            num_trees = sum(g.symbol_id == 2 for g in group)
+            all_dashes = all(g.symbol_id == 1 for g in group)
+            return not all_dashes and num_trees <= 1
+
+        groups_to_check = (
+            list(self.board_state)
+            + list(self.board_state.T)
+            + list(self.get_groups().values())
+        )
+
+        return all(is_group_valid(group) for group in groups_to_check)
     
     @property
     def size(self):
