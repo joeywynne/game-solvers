@@ -126,7 +126,6 @@ def clean_square_colours(squares: dict) -> dict:
     }
 
     unique_colours = set(squares.values())
-    print(unique_colours)
     colour_mapping = {}
     for cols in combinations(unique_colours, 2):
         distance = sum(abs(cols[0][i] - cols[1][i]) for i in range(3)) # ignore channel a
@@ -146,7 +145,8 @@ def to_rgba(hex_code: str) -> tuple[int]:
     if match:
         groups = match.groups()
         if len(groups) == 4:
-            return (int(g) for g in groups)
+            r, g, b, a = groups
+            return (int(r), int(g), int(b), float(a))
         else:
             r, g, b = groups
         return (r, g, b, 1)

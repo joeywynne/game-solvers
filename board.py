@@ -4,6 +4,7 @@ from io import StringIO
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from dataclasses import dataclass
+from copy import deepcopy
 
 
 DISPLAY_MAP = {
@@ -38,7 +39,7 @@ class Board:
         board_state = generate_state(grid)
 
         self.board_state = self._is_valid_state(board_state)
-        self.start_state = self.board_state.copy()
+        self.start_state = deepcopy(self.board_state)
     
     def _is_valid_state(self, state):
         """Check that the state is valid for a tree game
@@ -50,7 +51,7 @@ class Board:
     
     def display(self, solved: bool | None = None, sub_title: str = "", state_type: str="current"):
         n = self.num_shapes
-        colours = cm.tab10(range(n))
+        colours = cm.tab20(range(n))
 
         board = self.board_state if state_type == "current" else self.start_state
         rows, cols = board.shape

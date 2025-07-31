@@ -1,9 +1,11 @@
 """
 Logic - ask mary
-1. If Column, row or shape has only one option - fill it with T
-2. If placing a T would block a shape from being able to have a T, it can not be a T
-3. If all of shape in one row/column then all other squares in that row/column are -
-4. If 2 shapes exist only in 2 columns/rows then all others in those rows/columns are - (same as 2 but for n=2, n=3 etc)
+1. If Column, row or shape has only one option - fill it with T         (done)
+2. If placing a T would block a shape from being able to have a T, it can not be a T        (done)
+3. If all of shape in one row/column then all other squares in that row/column are -        (done)
+5. If a row/col contains only 2 colours then the rest of these colours are - (extends to n=3, n=4 etc.)
+4. If 2 shapes exist only in 2 columns/rows then all others in those rows/columns are - (same as 3 but for n=2, n=3 etc)    (done)
+
 
 Make a move
 1. If adding -, then nothing
@@ -34,7 +36,11 @@ def solve_board(board: Board) -> bool:
         for n in range(1, board.board_state.shape[0] + 1):
             if any_n_rows_cols_only_n_colours(board, n):
                 break
-
+            if n == 1:
+                continue
+            if any_n_shapes_exist_in_n_rows_cols(board, n):
+                break
+        
         # None of the strategies made progress
         # find a contradiction in one of the available options
         if find_contradiction(board):
@@ -89,6 +95,8 @@ def is_only_one_square_available(board: Board) -> bool:
         
 def square_blocks_all(board: Board) -> bool:
     """If square being tree blocks all of another shape/row/col it is not a tree.
+
+    This is rule 2 but also does 3.
     
     Note: doesn't count if it blocks its own shape/col/row
     """
@@ -200,6 +208,41 @@ def any_n_rows_cols_only_n_colours(board: Board, num_colours: int) -> bool:
             return True
     return False
 
+def any_n_shapes_exist_in_n_rows_cols(board: Board, num_shapes: int) -> bool:
+    """If N shapes only exist in N rows/cols any other shapes in those columns is -
+    
+    Note we only consider available squares.
+    Don't need to consider n=1
+    """
+    def check_colour_n_groups(shape_squares: list) -> set:
+        """For any N shapes if they are only in N rows/cols the rest of the row/col must be -
+        """
+        squares = [item for sublist in shape_squares for item in sublist]
+        row_idxs = set(square.coords[0] for square in squares)
+        if len(row_idxs) == len(shape_squares):
+            selected_rows = [board.board_state[i] for i in row_idxs]
+            coords_to_update = [s.coords for s in selected_rows if s not in squares]
+            for coord in coords_to_update:
+                board.place_dash(coord)
+            return row_idxs, "rows"
+        
+        col_idxs = set(square.coords[1] for square in squares)
+        if len(col_idxs) == len(shape_squares):
+            selected_cols = [board.board_state.T[i] for i in col_idxs]
+            coords_to_update = [s.coords for s in selected_cols if s not in squares]
+            for coord in coords_to_update:
+                board.place_dash(coord)
+            return col_idxs, "columns"
+        return set(), None
+        
+    for shapes in combinations(board.get_groups().items(), num_shapes):
+        shape_idx, shape_squares = zip(*[shapes[i] for i in range(num_shapes)])
+        group_idx, group_type = check_colour_n_groups(shape_squares)
+        if group_idx:
+            LOG.info(f"Shapes {shape_idx} exist only in {group_type} {group_idx} all other squares in these {group_type} are dashes.")
+            return True
+    return False
+
 def find_contradiction(board: Board) -> bool:
     """Attempt to locate a contradiction by recursively solving
     
@@ -257,13 +300,13 @@ def get_sorted_possibilities(board: Board) -> list[list]:
 # TODO: add logging of how we solved
 # TODO: add tests
 if __name__ == "__main__":
-    csv_path = DOWNLOAD_BASE_PATH / "trees-logic-puzzle-100.csv"
-    board = read_board(csv_path)
-    solved = solve_board(board)
-    board.display(solved)
-#    for csv_path in DOWNLOAD_BASE_PATH.iterdir():
-#        board = read_board(csv_path)
-#        solved = solve_board(board)
-#        if not solved:
-#            board.display(solved, str(csv_path))
-#            exit()
+
+    for csv_path in DOWNLOAD_BASE_PATH.iterdir():
+        board = read_board(csv_path)
+        solved = solve_board(board)
+        if not solved:
+            board.display(sub_title=str(csv_path))
+            exit()
+
+
+# 174 fails - obvious....
