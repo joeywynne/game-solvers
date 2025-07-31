@@ -1,8 +1,8 @@
 """Test the tree solver against all of the puzzles in the folder"""
-from sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
+from tree_solver.sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
 from tree_logic_solver import read_board, solve_board
 import time
-from logger import set_log_level, LOG
+from game_solvers.logger import set_log_level, LOG
 from rich.progress import (
     BarColumn,
     MofNCompleteColumn,

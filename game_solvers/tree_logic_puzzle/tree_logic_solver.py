@@ -16,9 +16,9 @@ Add logger to explain the moves made (narration)
 """
 from tree_solver.board import read_board, Board
 import numpy as np
-from logger import LOG
+from game_solvers.logger import LOG
 from itertools import combinations
-from sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
+from tree_solver.sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
 from pathlib import Path
 from copy import deepcopy
 
