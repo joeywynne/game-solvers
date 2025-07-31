@@ -1,5 +1,6 @@
 __pycache__
 game_data/
 .vscode
+*.egg-info
 
 profile_output.prof
