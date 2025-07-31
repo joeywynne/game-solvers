@@ -14,7 +14,7 @@ Make a move
 Add logger to explain the moves made (narration)
 - outlines of shapes
 """
-from board import read_board, Board
+from tree_solver.board import read_board, Board
 import numpy as np
 from logger import LOG
 from itertools import combinations
