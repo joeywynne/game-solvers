@@ -1,6 +1,6 @@
 """Test the tree solver against all of the puzzles in the folder"""
 from tree_solver.sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
-from tree_logic_solver import read_board, solve_board
+from game_solvers.tree_logic_puzzle.tree_solver import read_board, solve_board
 import time
 from game_solvers.logger import set_log_level, LOG
 from rich.progress import (

@@ -14,11 +14,12 @@ Make a move
 Add logger to explain the moves made (narration)
 - outlines of shapes
 """
-from tree_solver.board import read_board, Board
+
+from board import read_board, Board
 import numpy as np
 from game_solvers.logger import LOG
 from itertools import combinations
-from tree_solver.sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
+from game_solvers.sporcle_parser import DOWNLOAD_BASE_PATH
 from pathlib import Path
 from copy import deepcopy
 

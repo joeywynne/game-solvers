@@ -5,7 +5,8 @@ import json
 import numpy as np
 from game_solvers.request_handler import get_page
 from game_solvers.logger import LOG
-from game_solvers.sporcle_parser import clean_square_colours, download_sporcle_games
+from game_solvers.sporcle_parser import download_sporcle_games
+from math import sqrt
 
 SKYSCRAPER_SEARCH_STR = "Skyscrapers Logic Puzzle"
 
@@ -16,8 +17,6 @@ def parse_skyscraper_game_page(url: str) -> np.ndarray:
     soup = BeautifulSoup(StringIO(page_text), "html.parser")
     scripts_js = soup.find_all("script", {"type": "text/javascript"})
 
-    print(scripts_js)
-
     for script in scripts_js:
         if "payload" in script.text and "allCells" in script.text:
             break
@@ -25,46 +24,30 @@ def parse_skyscraper_game_page(url: str) -> np.ndarray:
     # Extract the JavaScript variable
     pattern = r"window\._payload\s*=\s*(\{.*\})"
     match = re.search(pattern, script.text, re.DOTALL)
-
     if not match:
         raise ValueError("Could not find window._payload in page.")
     
     json_str = match.group(1)
     json_info = json.loads(json_str)
     cells = json_info["allCells"]
+    grid_size = int(sqrt(json_info["activeCellCount"]))  # always a perfect square
     # key is coordinate pair e.g. 0,0
     # x,y is distance from top left
-    # value is another dict.
-    # value.options.bg_colour used to find groups
+    # value.text contains the hints (if is digit)
     # Also value.x and value.y can find coordinates
     # Note we swap x and y for numpy grid ref
     squares = {
-        (value["y"], value["x"]): value["options"]["bg_color"]
+        (value["y"], value["x"]): int(value["text"]) if value["text"].isdigit() else ""
         for value in cells.values()
     }
 
-    # Clean the colour mapping first
-    squares = clean_square_colours(squares)
+    # Aim to save a csv form with the 4 rows representing the clues
+    top = [squares.get((0, i + 1), 0) for i in range(grid_size)]
+    left = [squares.get((i + 1, 0), 0) for i in range(grid_size)]
+    right = [squares.get((i + 1, grid_size + 1), 0) for i in range(grid_size)]
+    bottom = [squares.get((grid_size + 1, i + 1), 0) for i in range(grid_size)]
 
-    # Create an ordered list of unique colours (preserves insertion order)
-    square_colours = list(dict.fromkeys(squares.values()))
-
-    # Determine grid size
-    max_row = max(coord[0] for coord in squares) + 1
-    max_col = max(coord[1] for coord in squares) + 1
-
-    # Initialize the grid with None
-    grid = np.full((max_row, max_col), None, dtype=object)
-
-    # Fill the grid with indices based on colour
-    for coord, colour in squares.items():
-        try:
-            index = square_colours.index(colour)
-        except ValueError:
-            raise ValueError(f"Colour {colour} not found in square_colours list!")
-        grid[coord] = index
-
-    return grid
+    return np.array([top, left, right, bottom])
 
 
 if __name__ == "__main__":

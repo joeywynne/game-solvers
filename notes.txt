@@ -1,0 +1,8 @@
+Games
+- tree puzzle
+- skyscrapers
+- suduko
+- 
+
+todo:
+- refactor board to do both games

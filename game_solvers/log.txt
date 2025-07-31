@@ -1,0 +1,1002 @@
+[12:15:22.044685] INFO     Querying page: https://www.sporcle.com/games/Katie_Wandering/skyscrapers-logic-puzzle-iii                                                                   sporcle_skyscraper_logic_parser.py:14
+[12:15:22.051856] DEBUG    Starting new HTTPS connection (1): www.sporcle.com:443                                                                                                                     connectionpool.py:1049
+[12:15:22.904018] DEBUG    https://www.sporcle.com:443 "GET /games/Katie_Wandering/skyscrapers-logic-puzzle-iii HTTP/1.1" 200 None                                                                     connectionpool.py:544
+<script type="text/javascript">
+                !(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://pricklydebt.com/v2nlxXpTYsCS3Soa4El5vtCy3Gb7LFUtsHfkkSzPv9CgOgXAsCjRHzOb0RlUCnFCbzWiLWlg9dg",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o[n]=o[n]||t})(window,"admiral");!(function(c,e,o,t,n){function r(o,t){(function n(){try{return 0<(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]}catch(o){}return!1})()&&(t=c[e].pubads())&&t.setTargeting("admiral-engaged","true")}(n=c[e]=c[e]||{}).cmd=n.cmd||[],typeof n.pubads===o?r():typeof n.cmd.unshift===o?n.cmd.unshift(r):n.cmd.push(r)})(window,"googletag","function");
+            </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">if (jQuery) { jQuery.noConflict(); var $j = jQuery; }</script>
+<script type="text/javascript">
+            window.preventCommentAnchorDefaultBehavior = function (href, anchor) {
+                if (href === window.location.pathname) {
+                    if (anchor === window.location.hash) {
+                        window.location.reload();
+                        return false;
+                    } else {
+                        window.location.hash = anchor;
+                        window.location.reload();
+                        return false;
+                    }
+                }
+            }
+        </script>
+<script src="/js/libs/domvm.micro.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.unknownStrings = new Set();
+	window.ttxt = function (text) {
+		if (window.textStrings.hasOwnProperty(text))
+		{
+			let transText = window.textStrings[text];
+			if (transText) {
+				return transText;
+			}
+		} else {
+			window.unknownStrings.add(text);
+			submitString(Array.from(unknownStrings));
+		}
+		return text;
+	}
+    let submitString = function(strings){};
+    window.textStrings = {"'Full' cell contains no answer character.":"'Full' cell contains no answer character.","'Show numbering and hint links' is on, but some full cells are not linked to answers.":"'Show numbering and hint links' is on, but some full cells are not linked to answers.","0":"0","2 Columns":"2 Columns","3 Columns":"3 Columns","4 Columns":"4 Columns","5 Columns":"5 Columns","6 Columns":"6 Columns","A Song of Ice and Fire":"A Song of Ice and Fire","A character count for each answer will automatically appear next to hints":"A character count for each answer will automatically appear next to hints","About":"About","About Us":"About Us","Accept Last Word":"Accept Last Word","Accept Single Character Answers":"Accept Single Character Answers","Account Help":"Account Help","Achieve":"Achieve","Activity":"Activity","Actor":"Actor","Actress":"Actress","Ad Issue":"Ad Issue","Add":"Add","Add Keywords":"Add Keywords","Add Media":"Add Media","Add To Playlist":"Add To Playlist","Add a Question":"Add a Question","Add to Playlist":"Add to Playlist","Admin":"Admin","Advanced":"Advanced","Advanced Options":"Advanced Options","Advanced Stats":"Advanced Stats","Africa":"Africa","After the quiz is over, clicking on or hovering over answer labels will reveal a hint tooltip":"After the quiz is over, clicking on or hovering over answer labels will reveal a hint tooltip","After the quiz is over, hint text will be replaced by extra column text":"After the quiz is over, hint text will be replaced by extra column text","Album":"Album","Alerts":"Alerts","All":"All","All Categories":"All Categories","All Quiz Categories":"All Quiz Categories","All Quiz Types":"All Quiz Types","All Quizzes":"All Quizzes","All Subcategories":"All Subcategories","All Time":"All Time","Allow Images":"Allow Images","Allows images to be used in hints and\/or answers":"Allows images to be used in hints and\/or answers","Alphabet":"Alphabet","Alphabetize Answers":"Alphabetize Answers","Already a Sporcler?":"Already a Sporcler?","Anatomy":"Anatomy","Animal":"Animal","Animation":"Animation","Anime":"Anime","Ans. 1 Color":"Ans. 1 Color","Ans. 1 URL":"Ans. 1 URL","Ans. 2 Color":"Ans. 2 Color","Ans. 2 URL":"Ans. 2 URL","Ans. 3 Color":"Ans. 3 Color","Ans. 3 URL":"Ans. 3 URL","Ans. 4 Color":"Ans. 4 Color","Ans. 4 URL":"Ans. 4 URL","Answer":"Answer","Answer 1":"Answer 1","Answer 2":"Answer 2","Answer 3":"Answer 3","Answer 4":"Answer 4","Answer Animation Style":"Answer Animation Style","Answer Coordinates":"Answer Coordinates","Answer Entry":"Answer Entry","Answer Image URL":"Answer Image URL","Answer Label":"Answer Label","Answer buttons will display once instead of numerous times if used more than once":"Answer buttons will display once instead of numerous times if used more than once","Answer text will be hidden during quiz play but available on the Quiz Results page":"Answer text will be hidden during quiz play but available on the Quiz Results page","Answers":"Answers","Answers appear in alphabetical order for every quiz play":"Answers appear in alphabetical order for every quiz play","Answers appear in random order for every quiz play":"Answers appear in random order for every quiz play","Answers are revealed as you enter complete and correct words":"Answers are revealed as you enter complete and correct words","Answers are revealed with each letter you type":"Answers are revealed with each letter you type","Answers have to be entered in order":"Answers have to be entered in order","Answers have to be entered in order without skipping":"Answers have to be entered in order without skipping","Answers must be entered in order and can be skipped with Previous\/Next buttons":"Answers must be entered in order and can be skipped with Previous\/Next buttons","Answers will appear as shapes (drawn on the Edit Map page)":"Answers will appear as shapes (drawn on the Edit Map page)","Answers will appear in columns beneath column headers (entered in the Hint column header)":"Answers will appear in columns beneath column headers (entered in the Hint column header)","Answers will appear on image without hint check marks":"Answers will appear on image without hint check marks","Answers will be marked correct if just the last word in an answer is entered":"Answers will be marked correct if just the last word in an answer is entered","Answers with 'Go' Appear on Quiz Start":"Answers with 'Go' Appear on Quiz Start","Answers with 'Go' as an alternate answer will automatically appear on quiz start":"Answers with 'Go' as an alternate answer will automatically appear on quiz start","Apps":"Apps","April Fools'":"April Fools'","Archive":"Archive","Archived":"Archived","Art":"Art","Artist":"Artist","Asia":"Asia","Associated Playlists":"Associated Playlists","Astronomy":"Astronomy","Athletes":"Athletes","Aug 15-17":"Aug 15-17","Author":"Author","Auto Racing":"Auto Racing","Avg Friend Score":"Avg Friend Score","Avg Score":"Avg Score","Baby Names":"Baby Names","Back":"Back","Badge Problem":"Badge Problem","Badges":"Badges","Badges Close to Earning":"Badges Close to Earning","Bands":"Bands","Baseball":"Baseball","Basic Info":"Basic Info","Basketball":"Basketball","Become a Host":"Become a Host","Begins and Ends":"Begins and Ends","Best Out of":"Best Out of","Best Picture":"Best Picture","Best Score":"Best Score","Best Score? Go Orange.":"Best Score? Go Orange.","Bible":"Bible","Billboard":"Billboard","Biography":"Biography","Biology":"Biology","Blitz":"Blitz","Blocked":"Blocked","Blog":"Blog","Board Games":"Board Games","Bonus answers (indicated with 'ee' in the Extra column) will become wrong answers":"Bonus answers (indicated with 'ee' in the Extra column) will become wrong answers","Book":"Book","Bookmark":"Bookmark","Bookmarks":"Bookmarks","Border":"Border","Both":"Both","Box Office":"Box Office","Break the quiz into columns (separated by forward slashes in the Answer column) to match answers":"Break the quiz into columns (separated by forward slashes in the Answer column) to match answers","Broadway":"Broadway","Browse":"Browse","By":"By","By continuing you agree to our":"By continuing you agree to our","Canada":"Canada","Cancel":"Cancel","Capital":"Capital","Card Games":"Card Games","Cars":"Cars","Cartoons":"Cartoons","Cast":"Cast","Categories":"Categories","Category":"Category","Catholicism":"Catholicism","Celebrity":"Celebrity","Century":"Century","Challenge":"Challenge","Challenges":"Challenges","Character Entry":"Character Entry","Chemistry":"Chemistry","Children's Books":"Children's Books","Chinese":"Chinese","Choose the field(s) to be displayed on the quiz results page":"Choose the field(s) to be displayed on the quiz results page","Christianity":"Christianity","Christmas":"Christmas","Church":"Church","City":"City","Classic":"Classic","Classical":"Classical","Click on answers from a set of options":"Click on answers from a set of options","Click on regions of an image":"Click on regions of an image","Click on text or image button answers":"Click on text or image button answers","Click to Comment":"Click to Comment","Clickable":"Clickable","Clip":"Clip","Code of Conduct":"Code of Conduct","Collapse":"Collapse","Collapse Graph":"Collapse Graph","College":"College","Color":"Color","Column Width":"Column Width","Comic Books":"Comic Books","Comment":"Comment","Comments":"Comments","Community":"Community","Community Guidelines":"Community Guidelines","Company":"Company","Computer":"Computer","Condensed Mode":"Condensed Mode","Confirm Password":"Confirm Password","Connect with Apple":"Connect with Apple","Connect with Google":"Connect with Google","Console":"Console","Content":"Content","Continent":"Continent","Continue":"Continue","Continue with Apple":"Continue with Apple","Continue with Google":"Continue with Google","Contribute":"Contribute","Contributed":"Contributed","Copy":"Copy","Copy Options":"Copy Options","Copy Quiz":"Copy Quiz","Correct":"Correct","Country":"Country","Country Music":"Country Music","Create":"Create","Create Quiz":"Create Quiz","Create a Free Online Quiz":"Create a Free Online Quiz","Create a New Quiz":"Create a New Quiz","Create a Quiz":"Create a Quiz","Create a Sporcle Quiz":"Create a Sporcle Quiz","Create a quiz on any topic imaginable":"Create a quiz on any topic imaginable","Created":"Created","Created Quiz Play Count":"Created Quiz Play Count","Creation Guides":"Creation Guides","Cricket":"Cricket","Crossword":"Crossword","Crosswords, word search, etc.":"Crosswords, word search, etc.","Curator Application":"Curator Application","Curator Pick":"Curator Pick","Curator Pick in":"Curator Pick in","Curator Picked":"Curator Picked","Curator Picks":"Curator Picks","Custom Answer Row Colors":"Custom Answer Row Colors","DC Comics":"DC Comics","Daily Dose":"Daily Dose","Dark Mode":"Dark Mode","Dashboard":"Dashboard","Dashboards":"Dashboards","Data & Style":"Data & Style","Date":"Date","Day":"Day","Decade":"Decade","Defamation":"Defamation","Default Timer":"Default Timer","Define Image URLs for Each Row":"Define Image URLs for Each Row","Define an individual image URL for each answer using an additional column in the data table":"Define an individual image URL for each answer using an additional column in the data table","Definition":"Definition","Delete":"Delete","Delete Account":"Delete Account","Delete Shape":"Delete Shape","Details":"Details","Determined by quiz contributions, plays on those quizzes and more":"Determined by quiz contributions, plays on those quizzes and more","Didn't get your code?":"Didn't get your code?","Director":"Director","Disable Answer Button":"Disable Answer Button","Disables an answer button after all its hints have been guessed":"Disables an answer button after all its hints have been guessed","Discover the most popular quizzes and quiz types on Sporcle":"Discover the most popular quizzes and quiz types on Sporcle","Discover the world's largest trivia and quiz site. Test your knowledge on Geography, Sports, Music, TV and more!":"Discover the world's largest trivia and quiz site. Test your knowledge on Geography, Sports, Music, TV and more!","Discovery":"Discovery","Disney":"Disney","Display Hints":"Display Hints","Doctor Who":"Doctor Who","Download Scores":"Download Scores","Draft":"Draft","Drafts":"Drafts","Drag or tap in any combination of directions, with each letter touching an adjacent cell":"Drag or tap in any combination of directions, with each letter touching an adjacent cell","Drag the answers into the correct order":"Drag the answers into the correct order","Drag, tap cells, or use end-to-end tapping (first\/last letter) in any direction. For single cell tapping, double-tap the last cell to submit":"Drag, tap cells, or use end-to-end tapping (first\/last letter) in any direction. For single cell tapping, double-tap the last cell to submit","Draw Shapes":"Draw Shapes","Drawn shapes will appear at quiz start":"Drawn shapes will appear at quiz start","Drop us a line in the form below":"Drop us a line in the form below","During quiz play, answers don't need to include default words (a, an, and, the, and '&') to be accepted as correct":"During quiz play, answers don't need to include default words (a, an, and, the, and '&') to be accepted as correct","During quiz play, hovering over answers will show the drawn shapes":"During quiz play, hovering over answers will show the drawn shapes","Easily make a free quiz with Sporcle. You can create multiple choice, fill in the blank, image quizzes and more.":"Easily make a free quiz with Sporcle. You can create multiple choice, fill in the blank, image quizzes and more.","Easter":"Easter","Edit Quiz":"Edit Quiz","Editor Pick":"Editor Pick","Editor Pick in":"Editor Pick in","Editor Picked":"Editor Picked","Editor Picks":"Editor Picks","Elements":"Elements","Email":"Email","Email Address":"Email Address","Email Address or Username":"Email Address or Username","Email\/Username":"Email\/Username","Embed":"Embed","Empty alternate value in an answer (answer field contains '\/\/' or ends in '\/').":"Empty alternate value in an answer (answer field contains '\/\/' or ends in '\/').","Engage":"Engage","Enter the verification code to complete your":"Enter the verification code to complete your","Entertainment":"Entertainment","Europe":"Europe","Even More Quizzes":"Even More Quizzes","Events":"Events","Everything Everywhere Daily":"Everything Everywhere Daily","Everything Everywhere Daily podcast":"Everything Everywhere Daily podcast","Example Quiz":"Example Quiz","Expand":"Expand","Expand Graph":"Expand Graph","Explore":"Explore","Extra":"Extra","Extra info text > 200 characters may not fit in the hint display area.":"Extra info text > 200 characters may not fit in the hint display area.","FAQ":"FAQ","Fade In":"Fade In","Famous":"Famous","Featured":"Featured","Featured Blog Post":"Featured Blog Post","Feedback":"Feedback","Feedback Type":"Feedback Type","Filter by Quiz Name":"Filter by Quiz Name","Filters":"Filters","Find":"Find","Find a Game":"Find a Game","Find a Show":"Find a Show","Finish":"Finish","Finish creating your free account":"Finish creating your free account","Flags":"Flags","Florins":"Florins","Follow":"Follow","Follow That Line":"Follow That Line","Following":"Following","Font Size":"Font Size","Food":"Food","Football":"Football","For Kids":"For Kids","For You":"For You","Forced Order":"Forced Order","Forgot Password?":"Forgot Password?","French":"French","Friends":"Friends","Fun Quizzes":"Fun Quizzes","Games":"Games","Gaming":"Gaming","General Knowledge":"General Knowledge","General Science":"General Science","Geography":"Geography","Geology":"Geology","German":"German","Get Specific":"Get Specific","Get Started":"Get Started","Get the Picture":"Get the Picture","Give Quiz Kudos":"Give Quiz Kudos","Give Up":"Give Up","Globe League":"Globe League","Go Orange":"Go Orange","Golf":"Golf","Grab Bag":"Grab Bag","Grid":"Grid","Grid & hints are hidden before quiz starts":"Grid & hints are hidden before quiz starts","Grid Size":"Grid Size","Group Answers with Same Hint":"Group Answers with Same Hint","Group Common Answers":"Group Common Answers","Groups":"Groups","Guesses":"Guesses","Halloween":"Halloween","Harry Potter":"Harry Potter","Help Center":"Help Center","Hide":"Hide","Hide Answer Text":"Hide Answer Text","Hide Comments":"Hide Comments","Hide Extra Column Until Answered":"Hide Extra Column Until Answered","Hide Hint Text":"Hide Hint Text","Hide Quiz Before Start":"Hide Quiz Before Start","Highlight Answer Shapes":"Highlight Answer Shapes","Hint":"Hint","Hint Coordinates":"Hint Coordinates","Hint Image URL":"Hint Image URL","Hint Pins":"Hint Pins","Hint check marks will appear on quiz during quiz play":"Hint check marks will appear on quiz during quiz play","Hint text is hidden before quiz starts":"Hint text is hidden before quiz starts","Hint text will appear directly above each answer box":"Hint text will appear directly above each answer box","Hint text will be hidden during quiz play but available on the Quiz Results page":"Hint text will be hidden during quiz play but available on the Quiz Results page","Hints":"Hints","Hints appear in random order for every quiz play":"Hints appear in random order for every quiz play","Hints are asked in order and can be skipped with Previous\/Next buttons":"Hints are asked in order and can be skipped with Previous\/Next buttons","Hints are asked in order and cannot be skipped (no Previous\/Next buttons)":"Hints are asked in order and cannot be skipped (no Previous\/Next buttons)","Hints cannot be skipped (no Previous\/Next buttons)":"Hints cannot be skipped (no Previous\/Next buttons)","History":"History","Hockey":"Hockey","Holiday":"Holiday","Holiday Songs":"Holiday Songs","Home":"Home","Horror Movies":"Horror Movies","Host":"Host","Hosts":"Hosts","How to Play":"How to Play","Human Check":"Human Check","Humor":"Humor","I agree to the":"I agree to the","I'll do this later":"I'll do this later","If your quiz has any known issues they will be listed here":"If your quiz has any known issues they will be listed here","Ignore 'the' in Answer Order":"Ignore 'the' in Answer Order","Ignore Default Words":"Ignore Default Words","Image Dimensions":"Image Dimensions","Image URL":"Image URL","Image is hidden before quiz starts":"Image is hidden before quiz starts","Images used without answer text (recommend 'Hide answer text on quiz page' for a non-blank results page).":"Images used without answer text (recommend 'Hide answer text on quiz page' for a non-blank results page).","Images used without hint text (recommend 'Hide question text on quiz page' for a non-blank results page).":"Images used without hint text (recommend 'Hide question text on quiz page' for a non-blank results page).","Incorrect login information":"Incorrect login information","Intro Quizzes":"Intro Quizzes","Islam":"Islam","Italian":"Italian","James Bond":"James Bond","Japanese":"Japanese","Jobs":"Jobs","Join Sporcle for Free":"Join Sporcle for Free","Join a Game":"Join a Game","Join for Free":"Join for Free","Judaism":"Judaism","Just For Fun":"Just For Fun","Justice":"Justice","Knowledge Base":"Knowledge Base","Kpop":"Kpop","Landmarks":"Landmarks","Language":"Language","Last 30 Days":"Last 30 Days","Last 7 Days":"Last 7 Days","Last Played":"Last Played","Last Updated":"Last Updated","Latest Quizzes by Category":"Latest Quizzes by Category","Latin":"Latin","Layout":"Layout","Leaderboards":"Leaderboards","League":"League","Learn":"Learn","Legend of Zelda":"Legend of Zelda","Length":"Length","Lessons":"Lessons","Lessons By Topic":"Lessons By Topic","Letter":"Letter","Literary Character":"Literary Character","Literature":"Literature","Live 5":"Live 5","Location":"Location","Locations":"Locations","Log In":"Log In","Log Out":"Log Out","Logic":"Logic","Logo":"Logo","Lord of the Rings":"Lord of the Rings","Lyrics":"Lyrics","MLB":"MLB","Make Editor Pick":"Make Editor Pick","Map":"Map","Mario":"Mario","Marvel":"Marvel","Marvel Cinematic Universe":"Marvel Cinematic Universe","Math":"Math","Math Test":"Math Test","May contain spoilers":"May contain spoilers","Message":"Message","Millions of quizzes on every":"Millions of quizzes on every","Minecraft":"Minecraft","Minefield":"Minefield","Mini-Crossword":"Mini-Crossword","Miscellaneous":"Miscellaneous","Missing Word":"Missing Word","Missing email or username":"Missing email or username","Missing password":"Missing password","Mixed Word":"Mixed Word","Mobile Apps":"Mobile Apps","Mode":"Mode","Modified":"Modified","More":"More","More By":"More By","More By This Creator":"More By This Creator","More Featured Quizzes":"More Featured Quizzes","More Info":"More Info","More Stats":"More Stats","More to Explore":"More to Explore","Most Kudos Received":"Most Kudos Received","Most Popular":"Most Popular","Most Popular All-Time":"Most Popular All-Time","Most Popular From Quiz Lab":"Most Popular From Quiz Lab","Most Popular Quizzes All-Time":"Most Popular Quizzes All-Time","Most Popular Quizzes Today":"Most Popular Quizzes Today","Most Popular This Day in...":"Most Popular This Day in...","Movie Characters":"Movie Characters","Movie Quotes":"Movie Quotes","Movie Resume":"Movie Resume","Movie Titles":"Movie Titles","Movies":"Movies","Multi-Column Match":"Multi-Column Match","Multi-Directional":"Multi-Directional","Multi-column match: number of columns doesn't match number of alt answers specified.":"Multi-column match: number of columns doesn't match number of alt answers specified.","Multiple Choice":"Multiple Choice","Music":"Music","Musical":"Musical","My":"My","Mythology":"Mythology","NBA":"NBA","NCAA":"NCAA","NFL":"NFL","NHL":"NHL","Nation":"Nation","National Holiday":"National Holiday","Nearby":"Nearby","Need help?":"Need help?","Network":"Network","New Featured Quizzes":"New Featured Quizzes","New Topic":"New Topic","Newest":"Newest","Newest Quizzes":"Newest Quizzes","Next":"Next","Next Quiz":"Next Quiz","Nintendo":"Nintendo","No Peeking":"No Peeking","No Skip":"No Skip","No Spoilers!":"No Spoilers!","No alerts. Your quiz is ready to go!":"No alerts. Your quiz is ready to go!","No answer selected":"No answer selected","Nominee":"Nominee","North America":"North America","Not a member?":"Not a member?","Notifications":"Notifications","Novel":"Novel","Numbers":"Numbers","Numerical":"Numerical","Oceania":"Oceania","Offensive Content":"Offensive Content","Offline":"Offline","Olympics":"Olympics","Once contributed, this quiz will be viewable on your Contributed Quizzes page, among other places. Share your new quiz with your friends!":"Once contributed, this quiz will be viewable on your Contributed Quizzes page, among other places. Share your new quiz with your friends!","One or more answers lacks an associated answer label coordinate location.":"One or more answers lacks an associated answer label coordinate location.","One or more answers lacks an associated hint location.":"One or more answers lacks an associated hint location.","One or more answers lacks an associated shape.":"One or more answers lacks an associated shape.","Opinionation":"Opinionation","Orange":"Orange","Orange Benefits":"Orange Benefits","Orange Membership Page":"Orange Membership Page","Orange Memberships":"Orange Memberships","Orange Saloon":"Orange Saloon","Order Up":"Order Up","Oscar":"Oscar","Other":"Other","Our Games":"Our Games","Page or URL":"Page or URL","Partnership\/Advertiser":"Partnership\/Advertiser","Partnerships":"Partnerships","Party Packs":"Party Packs","Password":"Password","Paused":"Paused","Percentage":"Percentage","Perfect Scores":"Perfect Scores","Physics":"Physics","Picks":"Picks","Picture Box":"Picture Box","Picture Click":"Picture Click","Pixar":"Pixar","Plants":"Plants","Play":"Play","Play Count":"Play Count","Play Next Quiz":"Play Next Quiz","Play Quiz":"Play Quiz","Play Quiz to Earn This Badge":"Play Quiz to Earn This Badge","Play Timed":"Play Timed","Play millions of free online trivia quizzes. There is a fun quiz about virtually every topic imaginable: Geography, History, Sports, Music, TV and more!":"Play millions of free online trivia quizzes. There is a fun quiz about virtually every topic imaginable: Geography, History, Sports, Music, TV and more!","Player":"Player","Playlist":"Playlist","Playlists":"Playlists","Plays":"Plays","Poem":"Poem","Pok\u00e9mon":"Pok\u00e9mon","Politics":"Politics","Pop Culture":"Pop Culture","Pop Music":"Pop Music","Popular":"Popular","Popular All-Time":"Popular All-Time","Popular By Category":"Popular By Category","Popular Quizzes":"Popular Quizzes","Popular Quizzes Today":"Popular Quizzes Today","Popular Today":"Popular Today","Popularity":"Popularity","Population":"Population","Practice Mode":"Practice Mode","Praise":"Praise","Premier League":"Premier League","Privacy Policy":"Privacy Policy","Private":"Private","Private Events":"Private Events","Private quizzes do not appear on site to other users unless they have a direct link. Once you contribute your quiz this setting cannot be changed.":"Private quizzes do not appear on site to other users unless they have a direct link. Once you contribute your quiz this setting cannot be changed.","Profile":"Profile","Pub Owners":"Pub Owners","Pub Trivia":"Pub Trivia","Public quizzes appear on Sporcle to all users. Sporcle may publish public quizzes, which removes your ability to edit the quiz.":"Public quizzes appear on Sporcle to all users. Sporcle may publish public quizzes, which removes your ability to edit the quiz.","Puzzle":"Puzzle","Puzzle Library":"Puzzle Library","Question":"Question","Question Color":"Question Color","Question URL":"Question URL","Questions":"Questions","Questions have to be entered in order without skipping":"Questions have to be entered in order without skipping","Quests":"Quests","Quick Pick":"Quick Pick","Quiz":"Quiz","Quiz Alerts":"Quiz Alerts","Quiz Categories":"Quiz Categories","Quiz Creation":"Quiz Creation","Quiz Creator Spotlight":"Quiz Creator Spotlight","Quiz Description":"Quiz Description","Quiz End":"Quiz End","Quiz Finished":"Quiz Finished","Quiz From the Vault":"Quiz From the Vault","Quiz Help":"Quiz Help","Quiz Image URL":"Quiz Image URL","Quiz Issue":"Quiz Issue","Quiz Kudos":"Quiz Kudos","Quiz Kudos Today":"Quiz Kudos Today","Quiz Lab":"Quiz Lab","Quiz Lab Submission":"Quiz Lab Submission","Quiz Lists":"Quiz Lists","Quiz Management":"Quiz Management","Quiz Name":"Quiz Name","Quiz Play Performance":"Quiz Play Performance","Quiz Playlist":"Quiz Playlist","Quiz Plays":"Quiz Plays","Quiz Scoreboard":"Quiz Scoreboard","Quiz Source":"Quiz Source","Quiz Stats":"Quiz Stats","Quiz Type":"Quiz Type","Quiz Types":"Quiz Types","Quiz Types Explained":"Quiz Types Explained","Quiz has been saved and restored!":"Quiz has been saved and restored!","Quiz is hidden before quiz starts":"Quiz is hidden before quiz starts","Quiz is untimed. Quiz plays in practice mode will not be counted towards challenge completion or badge progress.":"Quiz is untimed. Quiz plays in practice mode will not be counted towards challenge completion or badge progress.","Quiz taken offline.":"Quiz taken offline.","Quizmaster Score":"Quizmaster Score","Quizzes":"Quizzes","Quizzes By Day":"Quizzes By Day","Quizzes Created":"Quizzes Created","Quizzes Played":"Quizzes Played","Quizzes This Month":"Quizzes This Month","Quizzes by Day":"Quizzes by Day","Quizzes by...":"Quizzes by...","Quizzes for Your Site":"Quizzes for Your Site","Quizzes should have at least 1 Subcategory.":"Quizzes should have at least 1 Subcategory.","Quizzes should have at least 3 Tags.":"Quizzes should have at least 3 Tags.","Quizzes to Consider":"Quizzes to Consider","Quote":"Quote","Random":"Random","Random Order":"Random Order","Random Quiz":"Random Quiz","Randomize Answers":"Randomize Answers","Randomize Hints":"Randomize Hints","Randomize order of answers":"Randomize order of answers","Rank":"Rank","Rap":"Rap","Rating":"Rating","Ratings":"Ratings","Ready to show your quiz to the world?":"Ready to show your quiz to the world?","Reality Shows":"Reality Shows","Recent":"Recent","Recent Curator Picks":"Recent Curator Picks","Recent Discussions":"Recent Discussions","Recent Editor Picks":"Recent Editor Picks","Recent Quizzes":"Recent Quizzes","Recently Featured":"Recently Featured","Recently Updated":"Recently Updated","Relevance":"Relevance","Religion":"Religion","Religious Holiday":"Religious Holiday","Religious Music":"Religious Music","Remaining":"Remaining","Remove Ads":"Remove Ads","Remove Ads and Go Orange":"Remove Ads and Go Orange","Replace Hints with Extra Column Data at Quiz End":"Replace Hints with Extra Column Data at Quiz End","Replay":"Replay","Report":"Report","Report Quiz":"Report Quiz","Report a Problem":"Report a Problem","Resend it":"Resend it","Resources":"Resources","Restaurants":"Restaurants","Restore Quiz":"Restore Quiz","Results Page Display":"Results Page Display","Resume":"Resume","Retired":"Retired","Reveal Answers":"Reveal Answers","Reveal Letter":"Reveal Letter","Reveal Word":"Reveal Word","Right Answer":"Right Answer","Rock":"Rock","Role":"Role","Rugby":"Rugby","Save & Resend":"Save & Resend","Save Changes":"Save Changes","Save Changes?":"Save Changes?","Save Preferences":"Save Preferences","Saved":"Saved","Science":"Science","Score":"Score","Score Distribution":"Score Distribution","Scores":"Scores","Scripture":"Scripture","Search Sporcle":"Search Sporcle","Send Report":"Send Report","Send in Message":"Send in Message","Settings":"Settings","Shakespeare":"Shakespeare","Shape Coordinates":"Shape Coordinates","Shapes":"Shapes","Share with Friends":"Share with Friends","Share your quiz anywhere":"Share your quiz anywhere","Short Order":"Short Order","Show":"Show","Show All":"Show All","Show Answer Locations":"Show Answer Locations","Show Answers Only":"Show Answers Only","Show Comments":"Show Comments","Show Hint Character Lengths":"Show Hint Character Lengths","Show Hint Tooltips at Quiz End":"Show Hint Tooltips at Quiz End","Show Numbering and Hint Links":"Show Numbering and Hint Links","Show Shapes at Start":"Show Shapes at Start","Showdown":"Showdown","Showdown Scoreboard":"Showdown Scoreboard","Showdowns":"Showdowns","Sign In":"Sign In","Sign In with Apple":"Sign In with Apple","Sign In with Email":"Sign In with Email","Sign In with Google":"Sign In with Google","Sign in to play":"Sign in to play","Singers":"Singers","Single character answers will be marked correct":"Single character answers will be marked correct","Sitcom":"Sitcom","Slideshow":"Slideshow","Slogans":"Slogans","Snap to Grid":"Snap to Grid","So close":"So close","Soccer":"Soccer","Some wrong answers will appear in red":"Some wrong answers will appear in red","Song":"Song","Source URL":"Source URL","South America":"South America","South Park":"South Park","Spanish":"Spanish","Specify the standard width & height in pixels for the images in your quiz":"Specify the standard width & height in pixels for the images in your quiz","Sporcle":"Sporcle","Sporcle - A World of Quizzes":"Sporcle - A World of Quizzes","Sporcle App":"Sporcle App","Sporcle Categories":"Sporcle Categories","Sporcle Events":"Sporcle Events","Sporcle News":"Sporcle News","Sporcle Party":"Sporcle Party","Sporcle Pub Quiz":"Sporcle Pub Quiz","Sporcle Pub Trivia Sales":"Sporcle Pub Trivia Sales","Sporcle Quiz Types":"Sporcle Quiz Types","Sporcle Verification Code":"Sporcle Verification Code","Sporcle | Play Fun Trivia Quizzes on Every Topic":"Sporcle | Play Fun Trivia Quizzes on Every Topic","SporcleCon":"SporcleCon","Sporclecon":"Sporclecon","Sports":"Sports","Sports Teams":"Sports Teams","St Patrick's Day":"St Patrick's Day","Staff Pick Quizzes":"Staff Pick Quizzes","Star Trek":"Star Trek","Star Wars":"Star Wars","State":"State","Stats":"Stats","Stay signed in":"Stay signed in","Still need help?":"Still need help?","Stopwatch":"Stopwatch","Store":"Store","Streak":"Streak","Subcategories":"Subcategories","Subcategories and Tags":"Subcategories and Tags","Subject":"Subject","Submit":"Submit","Submit Feedback":"Submit Feedback","Subscribe":"Subscribe","Subscribed":"Subscribed","Subscriptions":"Subscriptions","Suggested Subcategories":"Suggested Subcategories","Suggestion":"Suggestion","Summary":"Summary","Superhero":"Superhero","Support Type":"Support Type","TV Characters":"TV Characters","TV Show":"TV Show","Tag limit reached":"Tag limit reached","Tags":"Tags","Take Offline":"Take Offline","Taylor Swift":"Taylor Swift","Television":"Television","Tell us more about why you're reporting this quiz":"Tell us more about why you're reporting this quiz","Tell us more about why you're reporting this quiz.":"Tell us more about why you're reporting this quiz.","Template":"Template","Tennis":"Tennis","Terms of Use":"Terms of Use","Test":"Test","Test Quiz":"Test Quiz","Text entered in the Extra column will not appear on the quiz until after the hint has been answered":"Text entered in the Extra column will not appear on the quiz until after the hint has been answered","Thanksgiving":"Thanksgiving","The Beatles":"The Beatles","The Hunger Games":"The Hunger Games","The Simpsons":"The Simpsons","The Ultimate Quiz Platform":"The Ultimate Quiz Platform","The Ultimate Trivia Destination - Discover how fun it is to know things":"The Ultimate Trivia Destination - Discover how fun it is to know things","The grid and hints will be hidden before quiz start":"The grid and hints will be hidden before quiz start","The grid will display hint numbers in answers cells and link answers to hints":"The grid will display hint numbers in answers cells and link answers to hints","The hint text will be hidden before quiz start":"The hint text will be hidden before quiz start","The latest quizzes featured by Sporcle":"The latest quizzes featured by Sporcle","The quiz image will be hidden before quiz start":"The quiz image will be hidden before quiz start","The quiz will be hidden before quiz start":"The quiz will be hidden before quiz start","Theme Nights":"Theme Nights","Themes":"Themes","They Got":"They Got","This is your unique username for Sporcle":"This is your unique username for Sporcle","This or That":"This or That","Tickets":"Tickets","Timer":"Timer","Today":"Today","Today's Daily Dose":"Today's Daily Dose","Today's Picks":"Today's Picks","Today's Top Quizzes in":"Today's Top Quizzes in","Toggle Visibility":"Toggle Visibility","Toolbox":"Toolbox","Tools":"Tools","Top Category":"Top Category","Top Quiz Type":"Top Quiz Type","Topography":"Topography","Total Play":"Total Play","Total Plays":"Total Plays","Tournaments":"Tournaments","Toys":"Toys","Track":"Track","Track Wrong Answers":"Track Wrong Answers","Track your quiz stats":"Track your quiz stats","Translation":"Translation","Trending":"Trending","Trending Near You":"Trending Near You","Trending Quizzes":"Trending Quizzes","Trending Today":"Trending Today","Trivia Bingo":"Trivia Bingo","Type":"Type","Type answers for images one-at-a-time":"Type answers for images one-at-a-time","Type answers that appear on an image":"Type answers that appear on an image","Type answers that correspond to images":"Type answers that correspond to images","Type in answers that appear in a list":"Type in answers that appear in a list","Types":"Types","Typing":"Typing","Typing Test":"Typing Test","US Presidents":"US Presidents","Ultimate Frisbee Association":"Ultimate Frisbee Association","Unique Plays":"Unique Plays","United Kingdom":"United Kingdom","United States":"United States","University":"University","Unplayed":"Unplayed","Upload Quiz Icon":"Upload Quiz Icon","Use Extra column for color codes":"Use Extra column for color codes","Username":"Username","Users":"Users","Valentine's Day":"Valentine's Day","Venue":"Venue","Verse":"Verse","Video Games":"Video Games","Videos":"Videos","View Results":"View Results","Viewing":"Viewing","Virtual":"Virtual","Virtual Trivia":"Virtual Trivia","Visibility":"Visibility","Vocabulary":"Vocabulary","WWE":"WWE","War":"War","We sent a 4-digit code to the email you provided":"We sent a 4-digit code to the email you provided","Web Feedback":"Web Feedback","Welcome to Sporcle":"Welcome to Sporcle","When alphabetizing answers, 'the' will be ignored":"When alphabetizing answers, 'the' will be ignored","Wildly Inaccurate\/Wrong":"Wildly Inaccurate\/Wrong","Word Hunt":"Word Hunt","Word Ladder":"Word Ladder","Word Play":"Word Play","Word Search":"Word Search","World":"World","World Cup":"World Cup","World Leaders":"World Leaders","World Religions":"World Religions","Wrong":"Wrong","Wrong Answers":"Wrong Answers","Wrong answers will be tracked and count against your score during quiz play":"Wrong answers will be tracked and count against your score during quiz play","Wrong answers will end the quiz":"Wrong answers will end the quiz","Year":"Year","You Got":"You Got","You Might Also Like":"You Might Also Like","You don't have a high score for this quiz in practice mode yet":"You don't have a high score for this quiz in practice mode yet","You don't have a high score for this quiz in showdown mode yet":"You don't have a high score for this quiz in showdown mode yet","You don't have a high score for this quiz yet":"You don't have a high score for this quiz yet","You have not played yet":"You have not played yet","You have unsaved changes, are you sure you want to restore this quiz? This will save all of your changes.":"You have unsaved changes, are you sure you want to restore this quiz? This will save all of your changes.","You're almost there!":"You're almost there!","Young Adult":"Young Adult","Your Score":"Your Score","Your account has been blocked from logging in":"Your account has been blocked from logging in","Your hint column has content but hasn't been made visible.":"Your hint column has content but hasn't been made visible.","Your quiz has no URL.":"Your quiz has no URL.","Your quiz has no content and is unplayable.":"Your quiz has no content and is unplayable.","Zoom In":"Zoom In","and":"and","characters":"characters","customer support":"customer support","hide this ad":"hide this ad","if website related":"if website related","indicates a required field":"indicates a required field","letters, numbers":"letters, numbers","mentally stimulating diversions":"mentally stimulating diversions","more rows to the bottom":"more rows to the bottom","next":"next","or":"or","play":"play","plays":"plays","prev":"prev","quizzes played":"quizzes played","rating":"rating","ratings":"ratings","registration and log in":"registration and log in","sign up for free":"sign up for free","terms of service":"terms of service","topic in the universe":"topic in the universe","verification":"verification"};
+</script>
+<script type="text/javascript">
+	var creatorHandle = 'Katie_Wandering';
+	var creatorIDEncoded = '1V952283ie';
+	var focusLossData = {
+		version : 5,
+		events : []
+	};
+	window.Sporcle = window.Sporcle || {};
+	Sporcle.promotions = Sporcle.promotions || {};
+	Sporcle.promotions.ad_blocking = 0;
+	Sporcle.promotions.logged_in = 0;
+	Sporcle.promotions.expire = 86400;
+	Sporcle.promotions.keys = {
+		orange        : 'sporcle:promo:orange:closed',
+		virtualtrivia : 'sporcle:vtpromo:closed'
+	};
+	Sporcle.promotions.current = 'orange';
+	
+	Sporcle.scoreboards = {
+		quiz : {
+			params : {
+				game : 1598376,
+				mode : 'quizFriends',
+				all : false,
+				new : true
+			},
+			endpoints : {
+				'quizFriends'   : '/games/ajax/friends_scores.php',
+				'quizStopwatch' : '/games/ajax/friends_scores.php',
+			},
+			cache : {}
+		},
+		showdown : {
+			params : {
+				game : 1598376,
+				mode : 'showdownAlltime',
+				all : false,
+				new : true,
+                lin : 0			},
+			endpoints : {
+				'showdownAlltime' : '/games/ajax/showdown_top_performers.php',
+				'showdownFriends' : '/games/ajax/friends_scores.php',
+			},
+			cache : {}
+		}
+	}
+	
+	Sporcle.quizLists = {
+		dailyDoses : [],
+		similarGames : [{"game_id":389239,"game_name":"A Minefield Puzzle","game_url":"vikZ\/hint-a1-is-safe","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/389239.jpg?v=1518674102","icon_description":"A Minefield Puzzle","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":410004,"game_name":"A Booby-Trapped Minefield Puzzle","game_url":"vikZ\/booby-trapped-mines-is-taking-it-far","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/410004.jpg?v=1518674132","icon_description":"A Booby-Trapped Minefield Puzzle","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":417792,"game_name":"Minefield Puzzle II","game_url":"vikZ\/mine-mine-mine-mine","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/417792.jpg?v=1518674144","icon_description":"Minefield Puzzle II","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":440694,"game_name":"Minefield Puzzle III","game_url":"vikZ\/no-time-for-more-mines","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/440694.jpg?v=1518674184","icon_description":"Minefield Puzzle III","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":697266,"game_name":"Letter Grid Logic Puzzle (A-Y)","game_url":"d_o\/25-letter-path","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/697266.jpg?v=1518674845","icon_description":"Letter Grid Logic Puzzle (A-Y)","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":779995,"game_name":"A 'Scending Numbers Logic Puzzle","game_url":"Henry820\/scending-numbers-logic-puzzle","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/779995.jpg?v=1518675026","icon_description":"A 'Scending Numbers Logic Puzzle","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":885123,"game_name":"Picture Click Logic Puzzle II: Rotated Grid","game_url":"NYYanks\/a-picture-click-logic-puzzle-ii-diagonals","game_timer":"20m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/885123.jpg?v=1518675285","icon_description":"Picture Click Logic Puzzle II: Rotated Grid","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":892630,"game_name":"9x9 Mosaic Puzzle II","game_url":"goc3\/mosaic-logic-puzzle-iii","game_timer":"4m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/892630.jpg?v=1596248102","icon_description":"9x9 Mosaic Puzzle II","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":919431,"game_name":"Minefield Puzzle IV","game_url":"vikZ\/if-its-not-yours-its-a-mine","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/919431.jpg?v=1525886984","icon_description":"Minefield Puzzle IV","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":935456,"game_name":"Treasure Hunt! II","game_url":"goc3\/treasure-hunt-2","game_timer":"9m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/935456.jpg?v=1518675411","icon_description":"Treasure Hunt! II","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":966035,"game_name":"Logic Puzzle: 1-25 Number Grid","game_url":"Purple_Parrot\/1-25","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/966035.jpg?v=1518675520","icon_description":"Logic Puzzle: 1-25 Number Grid","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":968391,"game_name":"Logic Puzzle: 1-25 Number Grid II","game_url":"Purple_Parrot\/1-25-ii","game_timer":"20m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/968391.jpg?v=1519687865","icon_description":"Logic Puzzle: 1-25 Number Grid II","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":975023,"game_name":"Binary Logic Puzzle V","game_url":"Susan300\/binary-logic-puzzle-6x6-easy-5","game_timer":"3m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/975023.jpg?v=1520364434","icon_description":"Binary Logic Puzzle V","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":975024,"game_name":"Binary Logic Puzzle VI","game_url":"Susan300\/binary-logic-puzzle-6x6-easy-6","game_timer":"3m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/975024.jpg?v=1523307570","icon_description":"Binary Logic Puzzle VI","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":975025,"game_name":"Binary Logic Puzzle VII","game_url":"Susan300\/binary-logic-puzzle-6x6-easy-7","game_timer":"3m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/975025.jpg?v=1526920021","icon_description":"Binary Logic Puzzle VII","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":975027,"game_name":"Binary Logic Puzzle VIII","game_url":"Susan300\/binary-logic-puzzle-6x6-easy-8","game_timer":"3m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/975027.jpg?v=1570052383","icon_description":"Binary Logic Puzzle VIII","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":975028,"game_name":"Binary Logic Puzzle IX","game_url":"Susan300\/binary-logic-puzzle-6x6-easy-9","game_timer":"3m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/975028.jpg?v=1583413637","icon_description":"Binary Logic Puzzle IX","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":983948,"game_name":"Number Grid II","game_url":"Purple_Parrot\/number-grid-ii","game_timer":"8m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/983948.jpg?v=1518675569","icon_description":"Number Grid II","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":995923,"game_name":"Number Grid","game_url":"Purple_Parrot\/number-grid-i","game_timer":"8m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/995923.jpg?v=1518675594","icon_description":"Number Grid","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1032993,"game_name":"Minefield Puzzle V","game_url":"vikZ\/puzzle-of-mines","game_timer":"5m","game_type":0,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1032993.jpg?v=1582032154","icon_description":"Minefield Puzzle V","game_type_underscore_name":"classic","game_type_english_name":"Classic","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1134479,"game_name":"Crossword Blackout! II","game_url":"hockeystix3\/blackout","game_timer":"14m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1134479.jpg?v=1518673386","icon_description":"Crossword Blackout! II","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1159573,"game_name":"Number Grid III","game_url":"Purple_Parrot\/number-grid-iii","game_timer":"8m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1159573.jpg?v=1518673457","icon_description":"Number Grid III","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1188939,"game_name":"Crossword Blackout! VII","game_url":"hockeystix3\/blackout-7","game_timer":"14m","game_type":7,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1188939.jpg?v=1533222760","icon_description":"Crossword Blackout! VII","game_type_underscore_name":"pictureclick","game_type_english_name":"Picture Click","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1597521,"game_name":"Skyscrapers Logic Puzzle II","game_url":"Katie_Wandering\/skyscrapers-logic-puzzle-ii","game_timer":"5m","game_type":15,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1597521.jpg?v=1677797677","icon_description":"Skyscrapers Logic Puzzle II","game_type_underscore_name":"grid","game_type_english_name":"Grid","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1597548,"game_name":"Skyscrapers Logic Puzzle","game_url":"Katie_Wandering\/skyscrapers-logic-puzzle-i","game_timer":"5m","game_type":15,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1597548.jpg?v=1659368068","icon_description":"Skyscrapers Logic Puzzle","game_type_underscore_name":"grid","game_type_english_name":"Grid","label_text":"Just For Fun","label_url":"\/games\/category\/fun"}],
+		topTodayInCategory : [{"game_id":3251,"game_name":"1-100","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"iurewhiuerw\/numbers1_100","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3251.jpg?v=1668725135","icon_description":"1-100","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":438461,"game_name":"1-50 in 60","game_timer":"60s","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"carrgrecss\/1-50-in-one-minute","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/438461.jpg?v=1668727357","icon_description":"1-50 in 60","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":557833,"game_name":"1-20 Clickable Mines","game_timer":"4m","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"Benjamin_M\/1-20-clickable-mines","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/557833.jpg?v=1668808874","icon_description":"1-20 Clickable Mines","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":368180,"game_name":"Clickable 1-100 Mines","game_timer":"4m","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"RobPro\/1-100-click-me","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/368180.jpg?v=1662503341","icon_description":"Clickable 1-100 Mines","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":118813,"game_name":"Typing Challenge","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"HenryFieldstone\/typingchallenge","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/118813.jpg?v=1668726425","icon_description":"Typing Challenge","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":3711945,"game_name":"Word Ladder: He Heard It Through the Grapevine","game_timer":"90s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Tom_the_Terrible\/word-ladder-he-heard-it-through-the-grapevine","blurb_text":null,"icon":"\/images\/categories\/square\/fun.png?v=130001","icon_description":"Word Ladder: He Heard It Through the Grapevine","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":3351215,"game_name":"Word Hunt: Martin Scorsese Movies","game_timer":"2m","game_type":15,"game_dailybox":0,"game_type_english_name":"Grid","game_type_underscore_name":"grid","game_url":"Impsman\/word-hunt-missing-word-martin-scorsese-movies","blurb_text":null,"icon":"\/images\/categories\/square\/fun.png?v=130001","icon_description":"Word Hunt: Martin Scorsese Movies","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1666226,"game_name":"Missing Word: Utah A-Z","game_timer":"4m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"JackDots\/missing-word-utah-az","blurb_text":null,"icon":"\/images\/categories\/square\/fun.png?v=130001","icon_description":"Missing Word: Utah A-Z","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":2440009,"game_name":"Quick Pick: Scooby-Doo Characters","game_timer":"15s","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"jackfrog10\/quick-pick-scooby-doo","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/2440009.jpg?v=1651571624","icon_description":"Quick Pick: Scooby-Doo Characters","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":24214,"game_name":"Typing Speed Challenge","game_timer":"3m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"benzylene\/typingspeed","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/24214.jpg?v=1518673898","icon_description":"Typing Speed Challenge","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":152279,"game_name":"Typing Challenge II","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"HenryFieldstone\/typingchallenge2","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/152279.jpg?v=1518673805","icon_description":"Typing Challenge II","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":419597,"game_name":"Spacebar Challenge II","game_timer":"30s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"LumpyJ3\/30-second-blitz-spacebar-challenge","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/419597.jpg?v=1668811439","icon_description":"Spacebar Challenge II","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":2140,"game_name":"Pick Which Color?","game_timer":"60s","game_type":14,"game_dailybox":0,"game_type_english_name":"Multiple Choice","game_type_underscore_name":"multiplechoice","game_url":"Matt\/pick-the-right-color","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/2140.jpg?v=1518673868","icon_description":"Pick Which Color?","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":631911,"game_name":"Harry Potter Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Qqoobbllss\/harry-potter-logic-puzzle","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/631911.jpg?v=1668727087","icon_description":"Harry Potter Logic Puzzle","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1191509,"game_name":"Multi-Category Minefield Blitz XXVIII","game_timer":"60s","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"Thebiguglyalien\/minefield-blitz-xxviii","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1191509.jpg?v=1753582404","icon_description":"Multi-Category Minefield Blitz XXVIII","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":144139,"game_name":"Word Race (3 Letters)","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"paranoid_android\/3letterwordrace","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/144139.jpg?v=1518673797","icon_description":"Word Race (3 Letters)","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":450868,"game_name":"True or False Logic Quiz","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Government_Agent\/true-or-false-logic-quiz","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/450868.jpg?v=1668732667","icon_description":"True or False Logic Quiz","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":23799,"game_name":"Spacebar Challenge","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"bknd9597\/spacebarchallenge","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/23799.jpg?v=1518673892","icon_description":"Spacebar Challenge","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1213395,"game_name":"Draw a Pixel Picture XIII","game_timer":"10m","game_type":7,"game_dailybox":0,"game_type_english_name":"Picture Click","game_type_underscore_name":"pictureclick","game_url":"vikZ\/pixel-drawing-13","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1213395.jpg?v=1538689190","icon_description":"Draw a Pixel Picture XIII","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":233735,"game_name":"Typing Challenge III","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"HenryFieldstone\/typingchallenge3","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/233735.jpg?v=1518673888","icon_description":"Typing Challenge III","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":1282568,"game_name":"Crossword Blackout! XIII","game_timer":"14m","game_type":7,"game_dailybox":0,"game_type_english_name":"Picture Click","game_type_underscore_name":"pictureclick","game_url":"hockeystix3\/blackout-13","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1282568.jpg?v=1561046866","icon_description":"Crossword Blackout! XIII","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":541909,"game_name":"Find Voldemort! An H.P. Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"gambitgambit\/find-voldemort--a-harry-potter-logic-puzzle","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/541909.jpg?v=1668810361","icon_description":"Find Voldemort! An H.P. Logic Puzzle","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":854716,"game_name":"Quick Pick: Seven Sins by Definition","game_timer":"30s","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"Yacht\/quick-pick-seven-sins","blurb_text":null,"icon":"\/images\/categories\/square\/fun.png?v=130001","icon_description":"Quick Pick: Seven Sins by Definition","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":677664,"game_name":"Stupid Baseball Jokes","game_timer":"5m","game_type":11,"game_dailybox":0,"game_type_english_name":"Clickable","game_type_underscore_name":"clickable","game_url":"Chenchilla\/take-me-out-to-the-ball-lame","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/677664.jpg?v=1518674803","icon_description":"Stupid Baseball Jokes","label_text":"Just For Fun","label_url":"\/games\/category\/fun"},{"game_id":67467,"game_name":"Alpha Blitz!","game_timer":"60s","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"rockgolf\/alphabet_city","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/67467.jpg?v=1518674796","icon_description":"Alpha Blitz!","label_text":"Just For Fun","label_url":"\/games\/category\/fun"}],
+		topTodayInTag : [{"game_id":3710448,"game_name":"16 Little City Pictograms","game_timer":"6m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-city-pictograms","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3710448.jpg?v=1749983943","icon_description":"16 Little City Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":2590164,"game_name":"Two-Word Hint Mini-Crossword XLI","game_timer":"6m","game_type":15,"game_dailybox":0,"game_type_english_name":"Grid","game_type_underscore_name":"grid","game_url":"AuroraIllumina\/cruciverbalists-design-41","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/2590164.jpg?v=1752858830","icon_description":"Two-Word Hint Mini-Crossword XLI","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":440197,"game_name":"Country Trivia Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"skuban\/dont-forget-india","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/440197.jpg?v=1574686234","icon_description":"Country Trivia Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1139365,"game_name":"16 Little Geography Pictograms","game_timer":"6m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-geography-pictograms","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1139365.jpg?v=1518673399","icon_description":"16 Little Geography Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1250231,"game_name":"16 Little Geography Pictograms II","game_timer":"6m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-more-geography-pictograms","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1250231.jpg?v=1518673679","icon_description":"16 Little Geography Pictograms II","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1853641,"game_name":"16 Little Geography Pictograms III","game_timer":"6m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-more-more-geography-pictograms","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1853641.jpg?v=1589283694","icon_description":"16 Little Geography Pictograms III","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":631911,"game_name":"Harry Potter Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Qqoobbllss\/harry-potter-logic-puzzle","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/631911.jpg?v=1668727087","icon_description":"Harry Potter Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1277897,"game_name":"NBA Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"DLink47\/nba-logic-quiz","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1277897.jpg?v=1572010317","icon_description":"NBA Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":2153734,"game_name":"16 Little 6-Letter Word Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/certainly-not-hiding-anything-up-here","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/2153734.jpg?v=1616461261","icon_description":"16 Little 6-Letter Word Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":450868,"game_name":"True or False Logic Quiz","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Government_Agent\/true-or-false-logic-quiz","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/450868.jpg?v=1668732667","icon_description":"True or False Logic Quiz","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1282568,"game_name":"Crossword Blackout! XIII","game_timer":"14m","game_type":7,"game_dailybox":0,"game_type_english_name":"Picture Click","game_type_underscore_name":"pictureclick","game_url":"hockeystix3\/blackout-13","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1282568.jpg?v=1561046866","icon_description":"Crossword Blackout! XIII","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1242279,"game_name":"Countries of Europe: Logic Quiz","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"Narayan85\/countries-of-europe-logic-quiz","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1242279.jpg?v=1545432781","icon_description":"Countries of Europe: Logic Quiz","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":3723239,"game_name":"Word Wheels XXIV","game_timer":"6m","game_type":7,"game_dailybox":0,"game_type_english_name":"Picture Click","game_type_underscore_name":"pictureclick","game_url":"hockeystix3\/word-wheels-24","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3723239.jpg?v=1751563740","icon_description":"Word Wheels XXIV","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":541909,"game_name":"Find Voldemort! An H.P. Logic Puzzle","game_timer":"20m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"gambitgambit\/find-voldemort--a-harry-potter-logic-puzzle","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/541909.jpg?v=1668810361","icon_description":"Find Voldemort! An H.P. Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1582990,"game_name":"Missing Word Crossword: Coldplay Songs","game_timer":"5m","game_type":15,"game_dailybox":0,"game_type_english_name":"Grid","game_type_underscore_name":"grid","game_url":"BookishGirl98\/para-para-paraglide","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1582990.jpg?v=1673051218","icon_description":"Missing Word Crossword: Coldplay Songs","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1127404,"game_name":"16 Little 7-Letter Word Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/7-letters","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1127404.jpg?v=1580560492","icon_description":"16 Little 7-Letter Word Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":3701871,"game_name":"Sunday Crossword: Amy Adams","game_timer":"20m","game_type":15,"game_dailybox":0,"game_type_english_name":"Grid","game_type_underscore_name":"grid","game_url":"bhenderson79\/sunday-crossword-amy-adams","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3701871.jpg?v=1749332550","icon_description":"Sunday Crossword: Amy Adams","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":436574,"game_name":"A Pok\u00e9mon Logic Puzzle","game_timer":"15m","game_type":0,"game_dailybox":0,"game_type_english_name":"Classic","game_type_underscore_name":"classic","game_url":"THEJMAN\/a-pokemon-logic-puzzle","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/436574.jpg?v=1518674176","icon_description":"A Pok\u00e9mon Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1600483,"game_name":"Trees Logic Puzzle","game_timer":"4m","game_type":15,"game_dailybox":0,"game_type_english_name":"Grid","game_type_underscore_name":"grid","game_url":"Katie_Wandering\/trees-logic-puzzle-i","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1600483.jpg?v=1569290392","icon_description":"Trees Logic Puzzle","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1689527,"game_name":"16 Little 8-Letter Word Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-8-letter-words","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1689527.jpg?v=1571581057","icon_description":"16 Little 8-Letter Word Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":2509814,"game_name":"16 Little 1-Word '90s Movie Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-90s-movies","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/2509814.jpg?v=1655843052","icon_description":"16 Little 1-Word '90s Movie Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":1637280,"game_name":"16 Little 1-Word '80s Movie Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-80s-movies","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/1637280.jpg?v=1564577076","icon_description":"16 Little 1-Word '80s Movie Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":893751,"game_name":"Mini Paint-By-Numbers XXXV","game_timer":"10m","game_type":7,"game_dailybox":0,"game_type_english_name":"Picture Click","game_type_underscore_name":"pictureclick","game_url":"sproutcm\/heart_is_here","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/893751.jpg?v=1752852464","icon_description":"Mini Paint-By-Numbers XXXV","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":3212259,"game_name":"16 Little 1-Word '10s Movie Pictograms","game_timer":"5m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-2010s-movies","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3212259.jpg?v=1716845784","icon_description":"16 Little 1-Word '10s Movie Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"},{"game_id":3570243,"game_name":"16 Little 10-Letter Word Pictograms","game_timer":"6m","game_type":8,"game_dailybox":0,"game_type_english_name":"Picture Box","game_type_underscore_name":"picturebox","game_url":"bhenderson79\/16-little-10-letter-words","blurb_text":null,"icon":"https:\/\/d31xsmoz1lk3y3.cloudfront.net\/square\/3570243.jpg?v=1743880427","icon_description":"16 Little 10-Letter Word Pictograms","label_text":"Puzzle","label_url":"\/games\/subcategory\/puzzle"}],
+	};
+	
+	window._spAjaxCalls = window._spAjaxCalls || [];
+	
+	// ----------------------------------------
+	// Declaring these here for the quiz results page because common_js.php isn't included there
+	// ----------------------------------------
+	window.creatorID = 451595;
+	Sporcle.gameData = Sporcle.gameData || {};
+	Sporcle.gameData.name = "Skyscrapers Logic Puzzle III";
+	Sporcle.gameData.gameID = 1598376;
+	Sporcle.gameData.encodedGameID = '6J28f1c9CH';
+	Sporcle.gameData.categoryID = 8;
+	Sporcle.userData = Sporcle.userData || {};
+	Sporcle.userData.user_id = 0;
+	Sporcle.userData.has_orange = 0;
+	Sporcle.userData.user_handle = "";
+	Sporcle.userData.user_icon = "\/images\/u\/default_v2.svg";
+	Sporcle.userData.user_flair = null;
+	window._spHooks = window._spHooks || {'start': [], 'postStart': [], 'end': [], 'showMissed': []};
+	window.showingResults = false;
+	Sporcle.userData.user_archived_comments =  0	// ----------------------------------------
+	// Done declaring stuff for the results page
+	// ----------------------------------------
+	
+	
+	// DOM loaded event handler for a game page
+	$j(function() {
+				setupGamePageEventHandlers();
+
+		if (userID) {
+			loadInitialScoreboardData('quiz');
+			
+			
+			_spAjaxCalls.push(buildCheckForChallengesRequest(gameID));
+			_spAjaxCalls.push(buildCheckForTournamentsRequest(gameID));
+		}
+
+		if ($j('#showdown-scoreboard').length > 0) {
+			loadInitialScoreboardData('showdown');
+		}
+		
+		
+		
+		var origHTMLBlur = HTMLElement.prototype.blur;
+		HTMLElement.prototype.blur = function() {
+			if ((document.activeElement.id === 'gameinput') && (this && (this.id !== 'gameinput'))) {
+				var stack = new Error().stack || '';
+				stack = stack
+					.split('\n')
+					.map(function (line) {
+						return line.trim();
+					})
+					.filter(function(line) {
+						return line;
+					});
+
+				focusLossData.events.push({
+					type: 'protoBlur',
+					time: Math.round((new Date()).getTime() / 1000),
+					uid : userID,
+					spuid : spuid,
+					gid : gameID,
+					o : hasOrange,
+					m : hasMembership,
+					s : stack,
+					sb : stack[stack.length - 1],
+					gi : inProgress,
+					si : showdownActive,
+					this : {
+						id : this.id,
+						name : this.name,
+						nodeName : this.nodeName,
+						pos : this.getBoundingClientRect()
+					}
+				});
+			}
+
+			origHTMLBlur.apply(this, arguments);
+		}
+
+		var origHTMLFocus = HTMLElement.prototype.focus;
+		HTMLElement.prototype.focus = function() {
+			if ((document.activeElement.id === 'gameinput') && (this && (this.id !== 'gameinput'))) {
+				var stack = new Error().stack || '';
+				stack = stack
+					.split('\n')
+					.map(function (line) {
+						return line.trim();
+					})
+					.filter(function(line) {
+						return line;
+					});
+
+				focusLossData.events.push({
+					type: 'protoFocus',
+					time: Math.round((new Date()).getTime() / 1000),
+					uid : userID,
+					spuid : spuid,
+					gid : gameID,
+					o : hasOrange,
+					m : hasMembership,
+					s : stack,
+					sb : stack[stack.length - 1],
+					gi : inProgress,
+					si : showdownActive,
+					this : {
+						id : this.id,
+						name : this.name,
+						nodeName : this.nodeName,
+						pos : this.getBoundingClientRect()
+					}
+				});
+			}
+
+			origHTMLFocus.apply(this, arguments);
+		}
+
+		var gameInputEl = document.getElementById('gameinput');
+		if(gameInputEl){
+            gameInputEl.addEventListener('focusout', function(e) {
+                var stack = new Error().stack || '';
+                stack = stack
+                    .split('\n')
+                    .map(function (line) {
+                        return line.trim();
+                    })
+                    .filter(function(line) {
+                        return line;
+                    });
+
+                var relatedTarget = e && e.hasOwnProperty('originalEvent') ? e.originalEvent.relatedTarget || e.originalEvent.explicitOriginalTarget || document.activeElement : null;
+
+                focusLossData.events.push({
+                    type: 'focusout',
+                    time: Math.round((new Date()).getTime() / 1000),
+                    uid: userID,
+                    spuid: spuid,
+                    gid: gameID,
+                    o: hasOrange,
+                    m: hasMembership,
+                    t: relatedTarget ? relatedTarget.id : '',
+                    n: relatedTarget && relatedTarget.nodeName ? relatedTarget.nodeName : '',
+                    s: stack,
+                    sb : stack[stack.length - 1],
+                    gi : inProgress,
+                    si : showdownActive
+                });
+            });
+
+            gameInputEl.addEventListener('blur', function(e) {
+                var stack = new Error().stack || '';
+                stack = stack
+                    .split('\n')
+                    .map(function (line) {
+                        return line.trim();
+                    })
+                    .filter(function(line) {
+                        return line;
+                    });
+
+                var relatedTarget = e && e.hasOwnProperty('originalEvent') ? e.originalEvent.relatedTarget || e.originalEvent.explicitOriginalTarget || document.activeElement : null;
+
+                focusLossData.events.push({
+                    type: 'blur',
+                    time: Math.round((new Date()).getTime() / 1000),
+                    uid: userID,
+                    spuid: spuid,
+                    gid: gameID,
+                    o: hasOrange,
+                    m: hasMembership,
+                    t: relatedTarget ? relatedTarget.id : '',
+                    n: relatedTarget && relatedTarget.nodeName ? relatedTarget.nodeName : '',
+                    s: stack,
+                    sb : stack[stack.length - 1],
+                    gi : inProgress,
+                    si : showdownActive
+                });
+            });
+        }
+
+		_spHooks['start'].push(function() {
+			$j('#send-focus-data').one('click', function(e){
+				$j(this).css({opacity:.5, cursor:'default'});
+				$j.ajax({
+					url:'/ajax/blur.php',
+					type: 'post',
+					data: JSON.stringify(focusLossData)
+				});
+			}).css({opacity:1, cursor:'pointer'});
+		})
+	});
+</script>
+<script type="text/javascript">
+window.Sporcle = window.Sporcle || {};
+window.app = window.app || {};
+window.app.notes = ["Each row and column of the puzzle contains exactly one building of each height. From shortest to tallest, the buildings are A, B, C, D and E. <br>\r\nThe numbers at the end of rows\/columns tell you how many buildings you'd be able to see if you stood there and looked down that row or column of the grid. <br>\r\nTall buildings block shorter ones. For example, standing to the left and looking right across the row BCAED, you would only be able to see three buildings. "];
+
+Sporcle.gameData = {
+	name              : 'Skyscrapers Logic Puzzle III',
+	description       : 'Can identify which building is where? (See how to play)',
+	gameID            : 1598376,
+	encodedGameID     : '6J28f1c9CH',
+	gameTypeID        : 15,
+	categoryID        : 8,
+	gameTimeSeconds   : 600,
+	autoGo            : false,
+	acceptLast        : false,
+	ordered           : false,
+	random            : false,
+	isClassic         : false,
+	isClickable       : false,
+	isMap             : false,
+	isGrid            : true,
+	isPictureClick    : false,
+	isPictureBox      : false,
+	isSlideshow       : false,
+	isMultipleChoice  : false,
+	isOrderUp         : false,
+	gStyles           : {"TextBorderColor":"#600","TextBorderStyle":"dashed","TextBorderWidth":"2px","TextFontSize":"10pt","TextFontFamily":"\"Courier New\", Courier, monospace","TextBackground":"transparent","TDFontSize":"9pt","KeyBGColor":"#FFEBCC","KeyTextColor":"#000000","ValueBGColor":"#FBFBFB","ValueTextColor":"#000000","KeyWidth":"50%","ValueWidth":"50%","MapFontSize":"9pt","MapBGColor":"#006633","GameGroupedSize":"0","ExtraBGColor":"#E5E5E5","ExtraTextColor":"#000000","MapTextColor":"#FFFFFF","ColumnBreakCount":"13","TDBorder":"border-bottom","THFontSize":"10pt","THTextColor":"#000000","THBGColor":"#FF9900","ForceColumnWidth":"0","AcceptSingle":"0","RandomizeOrder":"0","HideExtraColumn":"0","PictureBoxYPct":"0.3","MillionaireType":"0","BonusAnswersWrong":"0","WrongAnswersEnd":"0","KeyBorderColor":"#000000","KeyBorderSize":"1px","KeyBorderStyle":"solid","ValueBorderColor":"#000000","ValueBorderSize":"1px","ValueBorderStyle":"solid","ExtraBorderColor":"#000000","ExtraBorderSize":"1px","ExtraBorderStyle":"solid","HeaderBorderColor":"#000000","HeaderBorderSize":"0px","HeaderBorderStyle":"solid","RandomizeQuestionOrder":"0","AlphabetizeAnswers":"0","ButtonSize":"medium","CustomCellColors":"0","TrackIncorrectAnswers":"0","SlotMachine":"0","SlotMachineColumns":"2","ShowAnswerLocation":"0","MapBorderColor":"#000000","MapBorderSize":"1px","MapFontWeight":"normal","MapFontStyle":"normal","MapUseBackgroundColor":"1","ShowPictureBoxHint":"0","PictureBoxValueBGColor":"#FFFFFF","IgnoreThe":"0","OnlyShowAnswerText":"0","Animation":"zoom_in","NumColumns":"6","BonusImages":"0","InterpretiveQBGColor":"#730D66","InterpretiveQTextColor":"#FFFFFF","InterpretiveABGColor":"#D2E8FA","InterpretiveATextColor":"#000000","AddUpAnswers":"0","ShowShapeLocations":"1","GroupAnswers":"0","PreHideQuestions":"0","MapDrawShapes":"0","MapShapeColors":"right_wrong","MapShapeRightColor":"#33FF33","MapShapeWrongColor":"#FF3333","MapShapeOpacity":"0.3","DisableAnswerButton":"0","AllowImages":"0","HideQuestionText":"0","HideAnswerText":"0","AnswerTextSize":"medium","QuestionTextSize":"medium","AnswerClickShowHint":"0","GridBoardSize":"7,7","GridLineWidth":"2","GridLineColor":"#808080","GridCellColor":"#FFFFFF","GridEmptyColor":"#000000","RevealLetter":"0","RevealWord":"0","ShowCellHintLinks":"0","ShowHintCellCount":"0","GridCellTextColor":"#000000","GridCellRightTextColor":"#008000","GridCellWrongTextColor":"#FF0000","GridCellCursorColor":"rgba(255,194,0,0.85)","GridCellCursorOutlineColor":"#FF0000","GridCellCrosshairColor":"rgba(0,123,255,0.30)","GridCellTextSize":"1","MapRemoveShapes":"0","Ordered":"0","AcceptLast":"0","FilterWords":"1","AutoGo":"0","MapGridSize":"20","MapGridSnap":"0","GridWordSearch":"0","GridMultidirect":"0","ResultsPageDisplay":"both","ReplaceHintWithExtra":"0","PictureBoxImagePerRow":"1","PictureBoxImageDims":"150;150"},
+	reported          : false,
+	isLessonPlayable  : false,
+	hidePlayButton    : false,
+	disablePlayButton : false,
+	quizHelpers       : [],
+	numColumns : null,
+	valOrder : null,
+};
+
+Sporcle.userData = {
+	user_id           		: 0,
+	user_verified     		: false,
+	block_type  	    	: "",
+	has_orange        		: 0,
+	user_flair		  		: null,
+	user_icon		  		: "\/images\/u\/default_v2.svg",
+	user_handle	      		: "",
+	user_archived_comments 	: 0};
+
+
+var userID = 0;
+var userVerified = false;
+var blockType = "";
+
+// For showdown
+var showdownActive = false;		// Variable to tell game page functions to operate in showdown mode
+
+var gameID = 1598376;
+var gameCategoryID = 8;
+var gameCategoryName = "Just For Fun";
+var gameSubcategories = [];
+var gameNameDesc = "Skyscrapers Logic Puzzle III";
+var gameActive = 0;
+var creatorID = 451595;
+var creatorHandle = 'Katie_Wandering';
+var _spHooks = {'start': [], 'postStart': [], 'end': [], 'showMissed': []};
+var isEmbed = false;
+var hasOrange = 0;
+var hasMembership = 0;
+var loadTime = '1Ud4b937Ht4h';
+var is_flagship_app_view = 0;
+var app_platform = '';
+var loadTimeString = 'Jul 31, 2025';
+var gamescore;
+var gameurl = "/games/Katie_Wandering/skyscrapers-logic-puzzle-iii";
+var gameurl_short = "Katie_Wandering/skyscrapers-logic-puzzle-iii";
+var gti = "Skyscrapers Logic Puzzle III";
+var _spwr = 0;
+var _spks = 0;
+var showans = true;
+var wrongGuesses = Array();
+var spuid = '03945b0f06754712fdb33937ff744f48e545bd82';
+var encodedGameID = '6J28f1c9CH';
+var ordered = false;
+var hideNext = false;
+var clickBox = false;
+var gameTypeName = 'grid';
+var averageScore = 0;
+var gameTimeSeconds = 600;
+var snark = {};
+var reckoningQuestObjective = null;
+var siteID = 0;
+var guessesRemaining = 0;
+var guessOrder = [];
+var newUserRecommended = 0;
+var showSnark = true;
+var showingResults = false;
+var isPracticeModeDefault = false;
+var endOnAllCorrect = true;
+
+var stripWordsChanged = false;
+var stripAtoms = ["the","and","&","a","an"];
+
+// This code is only relevant to map and picture click games right now.
+$j(function() {
+	/* Set prev/next buttons to work with the space bar, treating it as a click event */
+	$j('#previousButton, #nextButton').on('keypress', function(e) {
+		if (e.keyCode === 32 || e.which === 32) { $j(this).trigger('click'); e.preventDefault(); }
+	});
+
+/*	Not including google analytics with onclick on buttons.
+	The case of users interacting with buttons before the
+	event handlers were placed should not occur because the
+	game requires JavaScript to have loaded */
+
+	$j("#random-link").on('click', function() {
+		gtag('event', 'Random', {'location': 'Get Reckoning'});
+	});
+
+
+	$j('#scoreboard-login-btn').on('click', function() {
+		window.SporcleLib.Modal.openRegisterModal({
+			analyticAction : 'Join for Free - quiz scoreboard',
+			regPath		   : 'quiz_scoreboard_join_prompt'
+		});
+	});
+
+	if (isPracticeModeDefault) {
+		window.selectTimerSetting('stopwatch');
+	}
+	
+	if (!mweb) {
+		if (!Sporcle.gameData.isMultipleChoice && !Sporcle.gameData.isClickable) {
+			if (typeof window._spHooks !== 'undefined') {
+				_spHooks['start'].push(function() {
+					$j('#quiz-area').addClass('sticky-header');
+				});
+				_spHooks['end'].push(function() {
+					$j('#quiz-area').removeClass('sticky-header');
+				});
+			}
+		}
+	}
+	
+	if (!Sporcle.gameData.isMultipleChoice) {
+		// Turn answer arrays back into `/` separated strings. This is because we can't dump out the answers on the page as `/` separated strings
+		// because it produces a bunch of 404s when google crawls our site. However, I don't want to spend the time now to dig into the game code and make
+		// it all work with arrays of arrays.  See https://trello.com/c/vNFR5QkF/4929-change-something-about-the-way-we-encode-answers-on-the-quiz-page
+		window.answers = window.answers.map((answer) => {
+			return answer.join('/');
+		});
+		window.hidden = window.hidden.map((answer) => {
+			return answer.join('/');
+		});
+	}
+});
+
+
+var count=0;var found=[];var currGuessing=-1;var currIndex=-1;var currReveal=-1;var currAns=-1;var hfound=[];var answers = [["<","<"],["x","x"],["t","t"],["R","R"],["O","O"],["x","x"],["t","t"],["O","O"],["<","<"],["R","R"],["O","O"],["R","R"],["<","<"],["t","t"],["x","x"],["R","R"],["<","<"],["x","x"],["O","O"],["t","t"],["t","t"],["O","O"],["R","R"],["x","x"],["<","<"]];var hidden = [];var r_space = null;var asta = {"J":"D","u":"+","c":"x",">":"E","H":"&","<":")","g":"{","k":"]","}":"T","W":"[","Y":"8","j":"i","C":"9","~":"S","n":"u","l":"}","N":"*","a":"t","d":"<","G":"7","R":"U","0":"a","[":"%","Z":"I","D":"~","%":"G","z":"_","8":"@","@":"r","B":"X","=":"V","t":"c","L":"l","6":"1","&":"#","r":"5","P":"N","2":"w","I":"C","m":"4","f":"P","w":"B","Q":"j","q":"s","x":"W","(":"A",")":"3","9":"F","V":"H","s":"0","4":"m","S":"J","]":"e","h":" ","1":"Z","o":"p","F":"6","e":"R","^":">","X":"Q","7":"v","K":"M","E":"$","_":"L","#":"y","b":"O","$":"z","5":"d","A":"n","+":"(","M":"k","T":"=","*":"o"," ":"g","i":"b","O":"K","U":"q","{":"^","p":"f","3":"h","v":"Y","y":"2"};for(var i in asta) { if(i == ' ') r_space = asta[i]; }guessesRemaining = answers.length;if (guessOrder.length == 0) {for (var i=0;i < answers.length;i++) { guessOrder.push(i); }gamePageIsLoaded = true;var questionOrder = [];}
+function getReckoning(numRight) {
+
+	/* Update UI elements in the get reckoning bar */
+
+	var userPct = 0;
+
+	if (answers.length < 1) {
+
+		userPct = 0;
+	} else {
+
+		userPct = _.round(numRight/answers.length, 2);
+
+		if (userPct === 0 && numRight > 0 ) {
+
+			userPct = 0.01;
+		} else if (userPct > 1) {
+
+			userPct = 1;
+		}
+	}
+
+	$j('#userPct').html(roundPercentScore(userPct) + '%');
+	$j('#avgPct').html(roundPercentScore(averageScore) + '%');
+
+	if (typeof averageFriendScore != 'undefined' && averageFriendScore) {
+		$j('#avgFriendPct').html(roundPercentScore(averageFriendScore) + '%');
+	} else {
+		$j('#avgFriendPct').html('N/A');
+	}
+
+	if (quizBadge && !parseInt(quizBadge.condition_earned) && quizBadge.logged_in && !stopwatch) {
+		updateBadge(userPct);
+	}
+
+	if (numRight > 0 && typeof reckoningQuestObjective !== 'undefined' && reckoningQuestObjective) {
+		var $objective = $j("<div class='quest_objective quest_icon visible' data-quest_number='" + reckoningQuestObjective.quest_number + "' data-objective_number='" + reckoningQuestObjective.objective_number + "'></div>")
+
+		$objective.click(() => {
+			window.onClickObjective(reckoningQuestObjective.quest_number, reckoningQuestObjective.objective_number, reckoningQuestObjective.quest_id, reckoningQuestObjective.objective_id, $objective);
+		});
+
+		if (!window.mweb) {
+			$j('#snark').hide();
+			$objective.insertAfter($j('#gameOverMsg'));
+		} else if (is_flagship_app_view) {
+			$j('#snark').html();
+			$objective.appendTo($j('#snark'));
+		} else {
+			$objective.appendTo($j('#reckoning .stats-wrapper'));
+		}
+	} else if (showSnark) {
+		snark = getSnark(userPct);
+		var attachSnarkModalListener = false;
+
+		if (snark !== '') {
+			snark = "<span>"+snark+"</span>";
+			if (!window.mweb) {
+				if (false) {
+					attachSnarkModalListener = true;
+					snark += "<button id='hide-snark-open-confirmation-modal' class='unformatted' aria-label='Hide post-quiz messages'></button>";
+				} else {
+					snark += "<button id='hide-snark-open-confirmation-modal' class='unformatted' aria-label='Hide post-quiz messages' onclick=\"window.SporcleLib.Modal.openRegisterModal({analyticAction:\'Hide Snark\',regPath:\'quiz_hide_snark\'});\"></button>";
+				}
+			}
+		} else {
+			$j('#snark').hide();
+		}
+
+		$j('#snark').html(snark);
+
+		if(attachSnarkModalListener){
+		    $j('#hide-snark-open-confirmation-modal').on('click', function () {
+
+                var modalArgs = {
+					title: 'Hide These Messages?',
+					message: 'Are you sure you want to hide post-quiz messages?',
+                    onYes: function(remodal){
+                        $j.ajax({
+                            type: "GET",
+                            url: "/ajax/user_settings.php",
+                            data: {s: 0},
+                            success: function(response) {
+                                if (response.success) {
+                                    $j('#snark').hide();
+                                    remodal.close();
+                                } else {
+                                    if (response.responseJSON.message) {
+                                        remodal.$modal.find('#confirmation-error').html(response.responseJSON.message);
+                                        remodal.$modal.find('#confirmation-error').show();
+                                    } else {
+                                        remodal.$modal.find('#confirmation-error').html('There was an error saving your preferences. Please contact <a href="/feedback/" target="_blank">feedback</a> if you continue to see this issue.');
+                                        remodal.$modal.find('#confirmation-error').show();
+                                    }
+                                }
+                            },
+                            error: function(response) {
+                                if (response.responseJSON.message) {
+                                    remodal.$modal.find('#confirmation-error').html(response.responseJSON.message);
+                                    remodal.$modal.find('#confirmation-error').show();
+                                } else {
+                                    remodal.$modal.find('#confirmation-error').html('There was an error saving your preferences. Please contact <a href="/feedback/" target="_blank">feedback</a> if you continue to see this issue.');
+                                    remodal.$modal.find('#confirmation-error').show();
+                                }
+                            }
+                        });
+                    }
+                };
+
+                SporcleLib.Modal._openConfirmationModal(modalArgs);
+            });
+        }
+
+	} else {
+		$j('#snark').hide();
+	}
+
+	// Update get reckoning with playlist info
+	var playlistData;
+	if (mweb) {
+		playlistData = typeof window.playlist === 'object' && window.playlist.hasOwnProperty('games') ? window.playlist : null;
+	} else {
+		playlistData = window.Sporcle.gameData.playlist ? window.Sporcle.gameData.playlist.vm.data : null;
+	}
+	
+	if (playlistData) {
+		playlistReckoning(playlistData, userPct, false && !stopwatch);
+	}
+
+	$j('#playGameBar').addClass('reckoning');
+	$j('#reckonBox').show();
+
+	if (mweb) {
+		/* mobile games only */
+		$j('#reckoning-numright').html(numRight);
+		$j('#reckoning-time').html(displayTime(timerSecs));
+
+		if (stopwatch) {
+			$j('#reckoning-time-title').text("Stopwatch");
+			$j('#reckoning-time, #reckoning-score').addClass('timePast');
+		}
+		
+		var checkToOpenFlorinPlayGoalModal = () => {
+			// Do we want to display the mission modal here?
+			return;
+		}
+
+		if (is_flagship_app_view && typeof showdownActive !== 'undefined' && showdownActive) {
+			openFlagshipPostGameModal(userPct);
+		}
+		if (!is_flagship_app_view) {
+			checkToOpenFlorinPlayGoalModal();
+		}
+	}
+
+	$j('#playGameBox').empty().hide();
+
+	$j('#postGameBox').show();
+	$j('#scoreBox').show();
+}
+
+function openFlagshipPostGameModal(userPct) {
+	let sporcleModal = new window.SporcleLib.SporcleModal();
+	let animations = window.animations;
+	let hapticType = 'success';
+	let completeMsg;
+
+	let animConfig = {
+		animationData : animations.checkmark,
+		loop          : true,
+		playSegments  : [[0, 30], [31, 75]]
+	};
+
+	if (userPct == 1) {
+		animConfig.animationData = animations.perfectScore;
+		animConfig.playSegments = [[0, 14], [15, 75]];
+		completeMsg = "Perfect Score!";
+	} else if (timerSecs == 0) {
+		hapticType = 'error';
+		animConfig.animationData = animations.outOfTime;
+		animConfig.playSegments = [[0, 14], [15, 75]];
+		completeMsg = "Out of Time!";
+	} else if (_spks && !didGiveUp) {
+		hapticType = 'error';
+		animConfig.animationData = animations.bomb;
+		animConfig.playSegments = [[0, 14], [15, 75]];
+		completeMsg = "You Hit a Mine!";
+	}
+
+	sporcleModal.openModalFromTpl($j('#post-game-modal-tpl').html(), {
+		show_loading : false,
+		dismissible  : false,
+		onInit : (modal) => {
+			let $modal = modal.$modal;
+			$modal.attr('id', 'postGameModal');
+
+			postGameAnim = lottie.loadAnimation({
+				container     : $modal.find('#postGameIcon')[0],
+				animationData : animConfig.animationData,
+				loop          : animConfig.loop,
+				autoplay      : false
+			});
+
+			$modal.find('.modal-close, .continue-post-quiz').on('click', () => {
+				sporcleModal.closeModal();
+				window.continuePostQuiz();
+			});
+
+			$modal.find('#completeMsg').html(completeMsg);
+			$modal.find('#postPct').html(roundPercentScore(userPct));
+			$modal.find('#postCorrect').html($j('#reckoning-score').text());
+
+			if (snark) {
+				$modal.find('#snark').html(snark);
+			} else {
+				$modal.find('#snark').hide();
+			}
+
+			setTimeout(() => {
+				postGameAnim.playSegments(animConfig.playSegments, true);
+			}, 150);
+		},
+		onClose : () => {
+			// Need this delay because if we open a new modal right as the close animation finishes,
+			// Then the modal events get confused and the "onOpen" callback never gets called
+			setTimeout(() => {
+				if (!is_flagship_app_view) {
+					checkToOpenFlorinPlayGoalModal();
+				}
+			}, 50);
+		}
+	});
+}
+
+function toggleshow() {
+	showans = !showans;
+}
+
+function roundPercentScore(pctScore) {
+	return _.round(100 * pctScore);
+}
+
+function updateBadge(userPct) {
+	var earned = false;
+	if (quizBadge && userPct > 0) {
+        if (quizBadge.criteria && quizBadge.criteria.length) {
+            var requiredCount = quizBadge.criteria.length;
+            var earnedCount = 0;
+
+            //Loop through possible badge criteria to see if we earned them
+            quizBadge.criteria.forEach(function (criterion) {
+                var comparison = parseInt(criterion.compare);
+
+                if(criterion.name === 'percent'){
+                    if ((comparison === 0 && userPct === parseFloat(criterion.value)) || //'0' means percent needs to equal
+                        (comparison === 1 && userPct > parseFloat(criterion.value)) || //'1' means percent needs to be greater than
+                        (comparison === -1 && userPct < parseFloat(criterion.value)) //'-1' means percent needs to be less than (at the time of writing, no badge exists like this)
+                    ) {
+                        earnedCount++;
+                    }
+                } else if (criterion.name === 'month'){
+                    var d = new Date();
+
+                    //getMonth() starts at 0
+                    if((d.getMonth() + 1 == criterion.value && comparison === 0) ||
+                        (d.getMonth() + 1 > criterion.value && comparison === 1) ||
+                        (d.getMonth() + 1 < criterion.value && comparison === -1)
+                    ){
+                        earnedCount++;
+                    }
+                } else if (criterion.name === 'day'){
+                    var d = new Date();
+                    if((d.getDate() == criterion.value && comparison === 0) ||
+                        (d.getDate() > criterion.value && comparison === 1) ||
+                        (d.getDate() < criterion.value && comparison === -1)
+                    ){
+                        earnedCount++;
+                    }
+                } else if (criterion.name === 'day_of_the_week'){
+                    var d = new Date();
+                    if((d.getDay() == criterion.value && comparison === 0) ||
+                        (d.getDay() > criterion.value && comparison === 1) ||
+                        (d.getDay() < criterion.value && comparison === -1)
+                    ){
+                        earnedCount++;
+                    }
+                } else if (criterion.name === 'avg_percent' && typeof averageScore !== 'undefined') {
+					var roundedUserPct = _.round(userPct, 2); //matches backend precision in badge tracker
+					var roundedAvgPct = _.round(averageScore, 2);
+					if((roundedUserPct == roundedAvgPct && comparison === 0) ||
+                        (roundedUserPct > roundedAvgPct && comparison === 1) ||
+                        (roundedUserPct < roundedAvgPct && comparison === -1)
+                    ){
+                        earnedCount++;
+                    }
+                }
+			});
+
+            earned = earnedCount == requiredCount;
+		} else {
+			earned = true;
+		}
+	}
+
+    if (earned) {
+		quizBadge.condition_earned = true;
+		quizBadge.achieved_count++;
+
+        var spliceIndex = null;
+		_(quizBadge.remaining_conditions).each(function(condition, index) {
+			if (quizBadge.condition_id == condition.condition_id) {
+				spliceIndex = index;
+			}
+		});
+		_(quizBadge.conditions).each(function(condition, index) {
+			if (quizBadge.condition_id == condition.condition_id) {
+				condition.earned = true;
+			}
+		});
+		
+
+		if (spliceIndex !== null) {
+			quizBadge.remaining_conditions.splice(spliceIndex, 1);
+            quizBadge.condition_earned_date = (new Date()).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });;
+        }
+
+		if (quizBadge.remaining_conditions.length === 0 ) {
+
+			if (quizBadge.badge_earned && quizBadge.levelable) {
+				quizBadge.achieved_count = 0;
+				quizBadge.level++;
+
+				var currDate = new Date();
+				quizBadge.last_level_date = window.SporcleLib.getMonthString(currDate.getMonth()) + ' ' + currDate.getDate() + ', ' + currDate.getFullYear();
+			} else {
+				quizBadge.badge_earned = true;
+				var currDate = new Date();
+				quizBadge.earned_date = window.SporcleLib.getMonthString(currDate.getMonth()) + ' ' + currDate.getDate() + ', ' + currDate.getFullYear();
+				if (quizBadge.levelable) {
+					quizBadge.level = 1;
+					quizBadge.last_level_date = window.SporcleLib.getMonthString(currDate.getMonth()) + ' ' + currDate.getDate() + ', ' + currDate.getFullYear();
+					quizBadge.achieved_count = 0;
+				}
+			}
+		}
+
+		if (badgeTooltip) {
+			badgeTooltip.deactivate();
+		}
+		if (badgeTooltipRightRail) {
+			badgeTooltipRightRail.deactivate();
+		}
+		
+		var template = _.template($j('#quiz-badge-template').html());
+		
+		if (window.mweb) {
+			$j('#main-wrapper .quiz-badge').replaceWith($j(template(quizBadge)));
+		} else {
+			quizBadge.tooltip_trigger_id = 'quiz-badge-art';
+			$j('#main-quiz-content .quiz-badge').replaceWith($j(template(quizBadge)));
+	
+			quizBadge.tooltip_trigger_id = 'quiz-badge-art-right-rail';
+			$j('#right-rail .quiz-badge').replaceWith($j(template(quizBadge)));
+	
+			if (!quizBadge.badge_earned) {
+				if (window.setupUnearnedBadgeTooltip) {
+					window.setupUnearnedBadgeTooltip($j('#quiz-badge-art'), quizBadge);
+					window.setupUnearnedBadgeTooltip($j('#quiz-badge-art-right-rail'), quizBadge);
+				} else {
+					var conditionsTemp = _.template($j('#badge-conditions-template').html());
+					var tooltipHtml = $j(conditionsTemp(quizBadge));
+				
+					const badgeTooltipOptions = { //this should match /sporcle-ui/tooltips/functionalTooltips
+						target               : true,
+						tipJoint             : 'bottom middle',
+						showOn               : 'mouseover',
+						hideTriggers         : ['target','tip'],
+						stemLength           : 8,
+						stemBase             : 12,
+						hideOn               : 'mouseout',
+						removeElementsOnHide : true,
+						background           : 'white',
+						borderColor          : '#d8d8d8',
+						borderWidth          : 1,
+						shadowOffset         : [3,3],
+						shadowBlur           : 10,
+						showEffect           : 'slide',
+						showEffectDuration   : 0.1,
+						hideEffectDuration   : 0.3,
+						className            : 'badge-tooltip',
+						shadowColor          : 'rgba(0,0,0,0.25)'
+					};
+
+					badgeTooltip = new Opentip('#quiz-badge-art', tooltipHtml.html(), badgeTooltipOptions);
+					badgeTooltipRightRail = new Opentip('#quiz-badge-art-right-rail', tooltipHtml.html(), badgeTooltipOptions);
+				}
+			} else {
+				if (window.setupEarnedBadgeTooltip) {
+					window.setupEarnedBadgeTooltip($j('#quiz-badge-art'), quizBadge);
+					window.setupEarnedBadgeTooltip($j('#quiz-badge-art-right-rail'), quizBadge);
+				}
+			}
+		}
+	}
+}
+
+function showHintTooltip(x, y, hint) {
+	$hint = $j('#hintTooltip');
+	if ($hint.length == 0) {
+		$hint = $j(
+			'<div id="hintTooltip">' +
+			'<div class="before"></div>' +
+			'<div class="afterContainer">' +
+			'<div class="after"></div>' +
+			'</div>' +
+			'</div>'
+			)
+			.appendTo($j('body'));
+	}
+	if (hint) {
+
+		var $afterContainer = $hint.find('.afterContainer');
+		var $after = $hint.find('.after');
+
+		// Set to max width before resize
+		$afterContainer.css({
+			width: '120px'
+		});
+
+		$hint.show();
+
+		// Set tooltip text to hint
+		$after.html(hint);
+
+		// Get width of tooltip with text
+		var width = Math.ceil($after[0].offsetWidth) + 1;
+
+		var leftShift = 0;
+		if (mweb) {
+			// Make sure the tooltip doesn't go off either side of the screen
+			var leftBound = 51;
+			var rightBound = $j('body').width() - 71;
+			var buf = 11;
+
+			// Shift based on width of text
+			var shiftLimit = Math.max(width/2 - 20, 0);
+
+			if (x < leftBound) {
+				// Too close to left edge of screen
+				leftShift = -shiftLimit;
+				x = Math.max(x, buf);
+			} else if (x > rightBound) {
+				// Too close to right edge of screen
+				leftShift = shiftLimit;
+				x = Math.min(x, $j('body').width() - buf);
+			}
+		}
+
+		// Set the position of the hint
+		$hint.css({
+			left: x + 'px',
+			top: y + 'px',
+		});
+
+
+		// Set outer container size and position
+		$afterContainer.css({
+			width: width + 'px',
+			left: '-' + ((width / 2) + leftShift) + 'px'
+		});
+
+
+	} else {
+		$hint.hide();
+	}
+}
+
+function getRandomColor() {
+	var r = Math.round(Math.random() * 255);
+	var g = Math.round(Math.random() * 255);
+	var b = Math.round(Math.random() * 255);
+	return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
+function hintTooltipIsDisplayed() {
+	return $j('#hintTooltip').is(':visible');
+}
+
+function getCurrentHintText() {
+	return $j('#hintTooltip .afterContainer .after').text();
+}
+
+// This is used to yield execution to the main javascript thread so that we can break longer running tasks into smaller tasks.
+// See here: https://web.dev/articles/optimize-long-tasks?utm_source=devtools
+function yieldToMain () {
+	return new Promise(resolve => {
+		setTimeout(resolve, 0);
+	});
+}
+
+async function runStartCode(stopwatch) {
+	if (stopwatch && !window.userID) {
+	    window.SporcleLib.Modal.openRegisterModal({
+	        regPath        : 'quiz_page_practice_mode',
+	        analyticAction : 'Quiz Page - Practice Mode',
+	    });
+	    return;
+	}
+
+	if (typeof gamePageIsLoaded != "undefined" && gamePageIsLoaded) {
+		if (window.startTriggered) {
+			return;
+		} else {
+			window.startTriggered = true;
+		}
+		
+				
+		
+				
+			if (typeof stopwatch !== 'undefined') {
+				if (stopwatch) {
+					window.selectTimerSetting('stopwatch');
+				} else {
+					window.selectTimerSetting('timer');
+				}
+			}
+			
+			// The `startGame` function does a lot, so we want to yield execution both before and after this call. Yielding before
+			// will allow the existing task to finish, freeing up the runtime to move to the next thing in the message queue before startGame
+			// executes. Yielding after will do the same, before we perform the rest of the actions related to starting a quiz.
+			await yieldToMain();
+			await startGame(600);
+			await yieldToMain();
+
+			
+			
+			callSPHooks('postStart');
+		
+				
+	}
+}
+
+function callSPHooks(name) {
+	if (typeof _spHooks != 'undefined') {
+		var hlen = _spHooks[name].length;
+		for (var i = 0; i < hlen; i++) {
+			_spHooks[name][i]();
+		}
+	}
+}
+
+</script>
+<script type="text/javascript">
+	var payload = window._payload = {"options":{"RevealLetter":false,"RevealWord":false,"ShowHintCellCount":false,"ShowCellHintLinks":false,"PreHideQuestions":false,"WrongAnswersEnd":false,"GridWordSearch":false,"GridMultidirect":false},"gameID":1598376,"hintCount":0,"hintLinkCount":0,"hasNumbers":true,"hasLetters":true,"activeCellCount":25,"allCells":{"2,0":{"id":"2,0","x":2,"y":0,"text":"3","alternate_text":[],"options":{"pre_visible":"true"}},"3,0":{"id":"3,0","x":3,"y":0,"text":"2","alternate_text":[],"options":{"pre_visible":"true"}},"1,1":{"id":"1,1","x":1,"y":1,"text":"d","alternate_text":["4"],"options":{}},"2,1":{"id":"2,1","x":2,"y":1,"text":"c","alternate_text":["3"],"options":{}},"3,1":{"id":"3,1","x":3,"y":1,"text":"b","alternate_text":["2"],"options":{}},"4,1":{"id":"4,1","x":4,"y":1,"text":"e","alternate_text":["5"],"options":{}},"5,1":{"id":"5,1","x":5,"y":1,"text":"a","alternate_text":["1"],"options":{}},"1,2":{"id":"1,2","x":1,"y":2,"text":"c","alternate_text":["3"],"options":{}},"2,2":{"id":"2,2","x":2,"y":2,"text":"a","alternate_text":["1"],"options":{}},"3,2":{"id":"3,2","x":3,"y":2,"text":"e","alternate_text":["5"],"options":{}},"4,2":{"id":"4,2","x":4,"y":2,"text":"d","alternate_text":["4"],"options":{}},"5,2":{"id":"5,2","x":5,"y":2,"text":"b","alternate_text":["2"],"options":{}},"0,3":{"id":"0,3","x":0,"y":3,"text":"4","alternate_text":[],"options":{"pre_visible":"true"}},"1,3":{"id":"1,3","x":1,"y":3,"text":"a","alternate_text":["1"],"options":{}},"2,3":{"id":"2,3","x":2,"y":3,"text":"b","alternate_text":["2"],"options":{}},"3,3":{"id":"3,3","x":3,"y":3,"text":"d","alternate_text":["4"],"options":{}},"4,3":{"id":"4,3","x":4,"y":3,"text":"c","alternate_text":["3"],"options":{}},"5,3":{"id":"5,3","x":5,"y":3,"text":"e","alternate_text":["5"],"options":{}},"1,4":{"id":"1,4","x":1,"y":4,"text":"e","alternate_text":["5"],"options":{}},"2,4":{"id":"2,4","x":2,"y":4,"text":"d","alternate_text":["4"],"options":{}},"3,4":{"id":"3,4","x":3,"y":4,"text":"a","alternate_text":["1"],"options":{}},"4,4":{"id":"4,4","x":4,"y":4,"text":"b","alternate_text":["2"],"options":{}},"5,4":{"id":"5,4","x":5,"y":4,"text":"c","alternate_text":["3"],"options":{}},"6,4":{"id":"6,4","x":6,"y":4,"text":"3","alternate_text":[],"options":{"pre_visible":"true"}},"0,5":{"id":"0,5","x":0,"y":5,"text":"2","alternate_text":[],"options":{"pre_visible":"true"}},"1,5":{"id":"1,5","x":1,"y":5,"text":"b","alternate_text":["2"],"options":{}},"2,5":{"id":"2,5","x":2,"y":5,"text":"e","alternate_text":["5"],"options":{}},"3,5":{"id":"3,5","x":3,"y":5,"text":"c","alternate_text":["3"],"options":{}},"4,5":{"id":"4,5","x":4,"y":5,"text":"a","alternate_text":["1"],"options":{}},"5,5":{"id":"5,5","x":5,"y":5,"text":"d","alternate_text":["4"],"options":{}},"4,6":{"id":"4,6","x":4,"y":6,"text":"5","alternate_text":[],"options":{"pre_visible":"true"}}},"allGroups":{},"allHints":{},"allGlyphs":{"#000000,2,1":{"path":[["M",1,1],["L",6,1],["L",6,6],["L",1,6],["L",1,1]],"type":1,"color":"#000000","width":2},"#6a6a6a,2,1":{"path":[["M",1,1],["L",1,6],["L",6,6],["L",6,1],["L",1,1]],"type":1,"color":"#6a6a6a","width":2}},"cellToHint":{},"hintToCell":{},"groupToHint":{},"colCount":7,"rowCount":7,"styles":{"lineWidth":2,"lineColor":"#808080","cellColor":"#FFFFFF","emptyColor":"#000000","cellTextColor":"#000000","cellRightTextColor":"#008000","cellWrongTextColor":"#FF0000","cellCursorColor":"rgba(255,194,0,0.85)","cellCursorOutlineColor":"#FF0000","cellCrosshairColor":"rgba(0,123,255,0.30)","cellTextSize":1,"backgroundImage":false},"gameTimeSeconds":600};
+</script>
+<script type="text/javascript">
+	var payload = window._payload = {"options":{"RevealLetter":false,"RevealWord":false,"ShowHintCellCount":false,"ShowCellHintLinks":false,"PreHideQuestions":false,"WrongAnswersEnd":false,"GridWordSearch":false,"GridMultidirect":false},"gameID":1598376,"hintCount":0,"hintLinkCount":0,"hasNumbers":true,"hasLetters":true,"activeCellCount":25,"allCells":{"2,0":{"id":"2,0","x":2,"y":0,"text":"3","alternate_text":[],"options":{"pre_visible":"true"}},"3,0":{"id":"3,0","x":3,"y":0,"text":"2","alternate_text":[],"options":{"pre_visible":"true"}},"1,1":{"id":"1,1","x":1,"y":1,"text":"d","alternate_text":["4"],"options":{}},"2,1":{"id":"2,1","x":2,"y":1,"text":"c","alternate_text":["3"],"options":{}},"3,1":{"id":"3,1","x":3,"y":1,"text":"b","alternate_text":["2"],"options":{}},"4,1":{"id":"4,1","x":4,"y":1,"text":"e","alternate_text":["5"],"options":{}},"5,1":{"id":"5,1","x":5,"y":1,"text":"a","alternate_text":["1"],"options":{}},"1,2":{"id":"1,2","x":1,"y":2,"text":"c","alternate_text":["3"],"options":{}},"2,2":{"id":"2,2","x":2,"y":2,"text":"a","alternate_text":["1"],"options":{}},"3,2":{"id":"3,2","x":3,"y":2,"text":"e","alternate_text":["5"],"options":{}},"4,2":{"id":"4,2","x":4,"y":2,"text":"d","alternate_text":["4"],"options":{}},"5,2":{"id":"5,2","x":5,"y":2,"text":"b","alternate_text":["2"],"options":{}},"0,3":{"id":"0,3","x":0,"y":3,"text":"4","alternate_text":[],"options":{"pre_visible":"true"}},"1,3":{"id":"1,3","x":1,"y":3,"text":"a","alternate_text":["1"],"options":{}},"2,3":{"id":"2,3","x":2,"y":3,"text":"b","alternate_text":["2"],"options":{}},"3,3":{"id":"3,3","x":3,"y":3,"text":"d","alternate_text":["4"],"options":{}},"4,3":{"id":"4,3","x":4,"y":3,"text":"c","alternate_text":["3"],"options":{}},"5,3":{"id":"5,3","x":5,"y":3,"text":"e","alternate_text":["5"],"options":{}},"1,4":{"id":"1,4","x":1,"y":4,"text":"e","alternate_text":["5"],"options":{}},"2,4":{"id":"2,4","x":2,"y":4,"text":"d","alternate_text":["4"],"options":{}},"3,4":{"id":"3,4","x":3,"y":4,"text":"a","alternate_text":["1"],"options":{}},"4,4":{"id":"4,4","x":4,"y":4,"text":"b","alternate_text":["2"],"options":{}},"5,4":{"id":"5,4","x":5,"y":4,"text":"c","alternate_text":["3"],"options":{}},"6,4":{"id":"6,4","x":6,"y":4,"text":"3","alternate_text":[],"options":{"pre_visible":"true"}},"0,5":{"id":"0,5","x":0,"y":5,"text":"2","alternate_text":[],"options":{"pre_visible":"true"}},"1,5":{"id":"1,5","x":1,"y":5,"text":"b","alternate_text":["2"],"options":{}},"2,5":{"id":"2,5","x":2,"y":5,"text":"e","alternate_text":["5"],"options":{}},"3,5":{"id":"3,5","x":3,"y":5,"text":"c","alternate_text":["3"],"options":{}},"4,5":{"id":"4,5","x":4,"y":5,"text":"a","alternate_text":["1"],"options":{}},"5,5":{"id":"5,5","x":5,"y":5,"text":"d","alternate_text":["4"],"options":{}},"4,6":{"id":"4,6","x":4,"y":6,"text":"5","alternate_text":[],"options":{"pre_visible":"true"}}},"allGroups":{},"allHints":{},"allGlyphs":{"#000000,2,1":{"path":[["M",1,1],["L",6,1],["L",6,6],["L",1,6],["L",1,1]],"type":1,"color":"#000000","width":2},"#6a6a6a,2,1":{"path":[["M",1,1],["L",1,6],["L",6,6],["L",6,1],["L",1,1]],"type":1,"color":"#6a6a6a","width":2}},"cellToHint":{},"hintToCell":{},"groupToHint":{},"colCount":7,"rowCount":7,"styles":{"lineWidth":2,"lineColor":"#808080","cellColor":"#FFFFFF","emptyColor":"#000000","cellTextColor":"#000000","cellRightTextColor":"#008000","cellWrongTextColor":"#FF0000","cellCursorColor":"rgba(255,194,0,0.85)","cellCursorOutlineColor":"#FF0000","cellCrosshairColor":"rgba(0,123,255,0.30)","cellTextSize":1,"backgroundImage":false},"gameTimeSeconds":600};
+</script>
+{'2,0': {'id': '2,0', 'x': 2, 'y': 0, 'text': '3', 'alternate_text': [], 'options': {'pre_visible': 'true'}}, '3,0': {'id': '3,0', 'x': 3, 'y': 0, 'text': '2', 'alternate_text': [], 'options': {'pre_visible': 'true'}}, '1,1': {'id': '1,1', 'x': 1, 'y': 1, 'text': 'd', 'alternate_text': ['4'], 'options': {}}, '2,1': {'id': '2,1', 'x': 2, 'y': 1, 'text': 'c', 'alternate_text': ['3'], 'options': {}}, '3,1': {'id': '3,1', 'x': 3, 'y': 1, 'text': 'b', 'alternate_text': ['2'], 'options': {}}, '4,1': {'id': '4,1', 'x': 4, 'y': 1, 'text': 'e', 'alternate_text': ['5'], 'options': {}}, '5,1': {'id': '5,1', 'x': 5, 'y': 1, 'text': 'a', 'alternate_text': ['1'], 'options': {}}, '1,2': {'id': '1,2', 'x': 1, 'y': 2, 'text': 'c', 'alternate_text': ['3'], 'options': {}}, '2,2': {'id': '2,2', 'x': 2, 'y': 2, 'text': 'a', 'alternate_text': ['1'], 'options': {}}, '3,2': {'id': '3,2', 'x': 3, 'y': 2, 'text': 'e', 'alternate_text': ['5'], 'options': {}}, '4,2': {'id': '4,2', 'x': 4, 'y': 2, 'text': 'd', 'alternate_text': ['4'], 'options': {}}, '5,2': {'id': '5,2', 'x': 5, 'y': 2, 'text': 'b', 'alternate_text': ['2'], 'options': {}}, '0,3': {'id': '0,3', 'x': 0, 'y': 3, 'text': '4', 'alternate_text': [], 'options': {'pre_visible': 'true'}}, '1,3': {'id': '1,3', 'x': 1, 'y': 3, 'text': 'a', 'alternate_text': ['1'], 'options': {}}, '2,3': {'id': '2,3', 'x': 2, 'y': 3, 'text': 'b', 'alternate_text': ['2'], 'options': {}}, '3,3': {'id': '3,3', 'x': 3, 'y': 3, 'text': 'd', 'alternate_text': ['4'], 'options': {}}, '4,3': {'id': '4,3', 'x': 4, 'y': 3, 'text': 'c', 'alternate_text': ['3'], 'options': {}}, '5,3': {'id': '5,3', 'x': 5, 'y': 3, 'text': 'e', 'alternate_text': ['5'], 'options': {}}, '1,4': {'id': '1,4', 'x': 1, 'y': 4, 'text': 'e', 'alternate_text': ['5'], 'options': {}}, '2,4': {'id': '2,4', 'x': 2, 'y': 4, 'text': 'd', 'alternate_text': ['4'], 'options': {}}, '3,4': {'id': '3,4', 'x': 3, 'y': 4, 'text': 'a', 'alternate_text': ['1'], 'options': {}}, '4,4': {'id': '4,4', 'x': 4, 'y': 4, 'text': 'b', 'alternate_text': ['2'], 'options': {}}, '5,4': {'id': '5,4', 'x': 5, 'y': 4, 'text': 'c', 'alternate_text': ['3'], 'options': {}}, '6,4': {'id': '6,4', 'x': 6, 'y': 4, 'text': '3', 'alternate_text': [], 'options': {'pre_visible': 'true'}}, '0,5': {'id': '0,5', 'x': 0, 'y': 5, 'text': '2', 'alternate_text': [], 'options': {'pre_visible': 'true'}}, '1,5': {'id': '1,5', 'x': 1, 'y': 5, 'text': 'b', 'alternate_text': ['2'], 'options': {}}, '2,5': {'id': '2,5', 'x': 2, 'y': 5, 'text': 'e', 'alternate_text': ['5'], 'options': {}}, '3,5': {'id': '3,5', 'x': 3, 'y': 5, 'text': 'c', 'alternate_text': ['3'], 'options': {}}, '4,5': {'id': '4,5', 'x': 4, 'y': 5, 'text': 'a', 'alternate_text': ['1'], 'options': {}}, '5,5': {'id': '5,5', 'x': 5, 'y': 5, 'text': 'd', 'alternate_text': ['4'], 'options': {}}, '4,6': {'id': '4,6', 'x': 4, 'y': 6, 'text': '5', 'alternate_text': [], 'options': {'pre_visible': 'true'}}}

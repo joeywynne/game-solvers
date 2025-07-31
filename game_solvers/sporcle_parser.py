@@ -13,7 +13,7 @@ from io import StringIO
 SPORCLE_URL = "https://www.sporcle.com"
 KATIE_QUIZZES_BASE = f"{SPORCLE_URL}/user/Katie_Wandering/quizzes"
 SPORCLE_GAMES_BASE = f"{SPORCLE_URL}/games"
-DOWNLOAD_BASE_PATH = Path("game_data")
+DOWNLOAD_BASE_PATH = (Path(__file__).parent / "../game_data").resolve()
 
 COLOUR_SIMILARITY_THRESH = 30
 
@@ -64,7 +64,6 @@ def get_sporcle_puzzle_links(base_url: Path, search_str: str) -> list[str]:
                 return puzzle_urls
 
             for quiz in quiz_list:
-                print(quiz["game_name"], search_str)
                 if not quiz["game_name"].startswith(search_str):
                     continue
                 puzzle_urls.append(f"{SPORCLE_GAMES_BASE}/{quiz['game_url']}")
