@@ -15,7 +15,8 @@ def solve_board(board: Board) -> bool:
             [
                 square_has_one_possible_value(board),
                 value_in_group_has_one_possible_square(board),
-                if_same_num_buildings_seen_as_board_size_fill_it(board)
+                if_same_num_buildings_seen_as_board_size_fill_it(board),
+                if_one_building_seen_first_is_tallest(board)
             ]
         )
         if not changed:
@@ -87,10 +88,22 @@ def if_same_num_buildings_seen_as_board_size_fill_it(board: Board) -> bool:
                 continue
             updated = True
             # Group is in correct direction based on viewing
-            print(direction, idx)
             group = board.get_group(direction, idx)
             for value, g in enumerate(group):
                 board.assign_value(g.coords, value + 1)
+    return updated
+
+def if_one_building_seen_first_is_tallest(board: Board) -> bool:
+    """If only one building is seen, the first building is the tallest (blocks the rest)."""
+    updated = False
+    for direction, rules in board.visible_buildings.items():
+        for idx, rule in enumerate(rules):
+            if rule != 1:
+                continue
+            updated = True
+            # Group is in correct direction based on viewing
+            group = board.get_group(direction, idx)
+            board.assign_value(group[0].coords, board.game_size)
     return updated
 
 

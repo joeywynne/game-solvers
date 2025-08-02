@@ -166,7 +166,7 @@ class Board:
             return self.board_state[:, idx]
         
         elif direction == "bottom_to_top":
-            return self.board_state[::-1, idx],
+            return self.board_state[::-1, idx]
         
         elif direction == "left_to_right":
             return self.board_state[idx, :]
