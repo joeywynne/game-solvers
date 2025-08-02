@@ -108,6 +108,9 @@ class Board:
 
     @property
     def is_live(self):
+        print(self.is_valid())
+        print(self.is_full)
+        self.display()
         return self.is_valid() and not self.is_full
     
     @property

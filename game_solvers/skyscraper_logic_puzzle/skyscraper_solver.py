@@ -10,15 +10,18 @@ SKYSCRAPER_PUZZLES_PATH = DOWNLOAD_BASE_PATH / "skyscraper_logic_puzzles"
 
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
+    # Rules to run once
+    buildings_seen_limits_max_square_value(board)
+    board.display()
+
     while board.is_live:
         changed = any(
             [
                 square_has_one_possible_value(board),
-                value_in_group_has_one_possible_square(board),
-                if_same_num_buildings_seen_as_board_size_fill_it(board),
-                if_one_building_seen_first_is_tallest(board)
+                value_in_group_has_one_possible_square(board)
             ]
         )
+        print(board.is_live)
         if not changed:
             break
 
@@ -35,8 +38,9 @@ def square_has_one_possible_value(board: Board) -> bool:
             square_coords = square.coords
             value = sub_values[0]
             board.assign_value(square_coords, value)
-            LOG(f"Square at {square_coords} has only one possible value - {value}")
+            LOG.info(f"Square at {square_coords} has only one possible value - {value}")
             updated = True
+    board.display()
     return updated
 
 
@@ -51,10 +55,11 @@ def value_in_group_has_one_possible_square(board: Board) -> bool:
         for value, count in zip(values, counts):
             if count != 1:
                 continue
+            value = int(value)
             # One possible place for value
             for square in group:
                 if value in square.sub_values:
-                    res.append(square, value)
+                    res.append((square, value))
         return res
 
     updated = False
@@ -79,32 +84,36 @@ def value_in_group_has_one_possible_square(board: Board) -> bool:
                 board.assign_value(coords, value)
     return updated
 
-def if_same_num_buildings_seen_as_board_size_fill_it(board: Board) -> bool:
-    """If the rule is n and board size is n the row/col is 1, 2, ..., n."""
-    updated = False
-    for direction, rules in board.visible_buildings.items():
-        for idx, rule in enumerate(rules):
-            if rule != board.game_size:
-                continue
-            updated = True
-            # Group is in correct direction based on viewing
-            group = board.get_group(direction, idx)
-            for value, g in enumerate(group):
-                board.assign_value(g.coords, value + 1)
-    return updated
 
-def if_one_building_seen_first_is_tallest(board: Board) -> bool:
-    """If only one building is seen, the first building is the tallest (blocks the rest)."""
-    updated = False
+def buildings_seen_limits_max_square_value(board: Board) -> None:
+    """If x buildings seen then tallest building in square one is 2 + N - r + i
+    N = Grid size
+    r = Rule
+    i = square index
+    
+    E.g.
+    If only one building is seen, the first building is the tallest (blocks the rest).
+    
+    Run once.
+    """
+    LOG.info("Applying max limits to rows and columns based on the rules")
     for direction, rules in board.visible_buildings.items():
         for idx, rule in enumerate(rules):
-            if rule != 1:
+            if rule == 0:
+                # 0 represents no rule
                 continue
-            updated = True
+            max_allowed_value = 1 + board.game_size - rule # + idx
             # Group is in correct direction based on viewing
             group = board.get_group(direction, idx)
-            board.assign_value(group[0].coords, board.game_size)
-    return updated
+            for idx, g in enumerate(group):
+                g.sub_values = [s for s in g.sub_values if s <= max_allowed_value + idx]
+
+
+    # Im missing something with this limiting thing.
+
+    #e.g. 4 [][][][] -> [1][2][3][4]
+    # 1 [][][][] -> [4][123][123][123]
+    # 2 [][][][] -> [123][]
 
 
 if __name__ == "__main__":
