@@ -160,6 +160,22 @@ class Board:
             if value in sub_vals:
                 sub_vals.remove(value)
 
+    def get_group(self, direction: str, idx: int) -> np.ndarray:
+        """Return the row/col based on viewing direction and index."""
+        if direction == "top_to_bottom":
+            return self.board_state[:, idx]
+        
+        elif direction == "bottom_to_top":
+            return self.board_state[::-1, idx],
+        
+        elif direction == "left_to_right":
+            return self.board_state[idx, :]
+        
+        elif direction == "right_to_left":
+            return self.board_state[idx, ::-1]
+
+        else:
+            raise ValueError(f"direction {direction} is not recognised.")
 
 def read_board(file_path: Path) -> Board:
     """Create a Board object from a csv file path"""

@@ -14,7 +14,8 @@ def solve_board(board: Board) -> bool:
         changed = any(
             [
                 square_has_one_possible_value(board),
-                value_in_group_has_one_possible_square(board)
+                value_in_group_has_one_possible_square(board),
+                if_same_num_buildings_seen_as_board_size_fill_it(board)
             ]
         )
         if not changed:
@@ -65,7 +66,7 @@ def value_in_group_has_one_possible_square(board: Board) -> bool:
             for square, value in res:
                 coords = square.coords
                 LOG.info(success_log_msg.format("row", row_idx, value, coords))
-                board.assign_value(square.coords, value)
+                board.assign_value(coords, value)
     
     for col_idx, col in enumerate(board.board_state.T):
         res = has_one_possible_square(col)
@@ -74,7 +75,22 @@ def value_in_group_has_one_possible_square(board: Board) -> bool:
             for square, value in res:
                 coords = square.coords
                 LOG.info(success_log_msg.format("column", col_idx, value, coords))
-                board.assign_value(square.coords, value)
+                board.assign_value(coords, value)
+    return updated
+
+def if_same_num_buildings_seen_as_board_size_fill_it(board: Board) -> bool:
+    """If the rule is n and board size is n the row/col is 1, 2, ..., n."""
+    updated = False
+    for direction, rules in board.visible_buildings.items():
+        for idx, rule in enumerate(rules):
+            if rule != board.game_size:
+                continue
+            updated = True
+            # Group is in correct direction based on viewing
+            print(direction, idx)
+            group = board.get_group(direction, idx)
+            for value, g in enumerate(group):
+                board.assign_value(g.coords, value + 1)
     return updated
 
 
