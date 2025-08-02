@@ -4,6 +4,7 @@ from io import StringIO
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from dataclasses import dataclass
+from collections.abc import Iterable
 
 
 @dataclass
@@ -21,10 +22,10 @@ class Board:
     Value represents the height of building if game square or the clue if not
     """
     def __init__(self, grid: np.ndarray, file_path: Path):
-        grid_size = grid.shape[0]
+        grid_size = grid.shape[1]
 
         self.game_size = grid_size
-        self.game_board = self._generate_board(grid_size)
+        self.board_state = self._generate_board(grid_size)
         self.visible_buildings = {
             "top_to_bottom": grid[0],
             "left_to_right": grid[1],
@@ -57,7 +58,7 @@ class Board:
             
             if sub_values:
                 # Sub values - display max 4 per line
-                max_per_line = 4
+                max_per_line = 5
                 split_sub_values = [sub_values[i:i + max_per_line] for i in range(0, len(sub_values), max_per_line)]
                 lines = "\n".join(", ".join(map(str, line)) for line in split_sub_values)
                 
@@ -77,8 +78,8 @@ class Board:
         # Game tiles
         for i in range(self.game_size):
             for j in range(self.game_size):
-                value = self.game_board[i, j].shape_value
-                sub_values = self.game_board[i, j].sub_values
+                value = self.board_state[i, j].shape_value
+                sub_values = self.board_state[i, j].sub_values
                 shape_symbol = str(value) if value else ""
                 shape_colour = colours[value - 1] if value else "white"
                 place_rect(i + 1, j + 1, shape_symbol, sub_values, shape_colour)
@@ -104,6 +105,61 @@ class Board:
         ax.set_title(title + self.name)
 
         plt.show()
+
+    @property
+    def is_live(self):
+        return self.is_valid() and not self.is_full
+    
+    @property
+    def is_solved(self):
+        return self.is_valid() and self.is_full
+    
+    @property
+    def is_full(self):
+        return not (self.board_values() == 0).any()
+    
+    def board_values(self) -> np.ndarray:
+        return np.array([[square.shape_value for square in row] for row in self.board_state])
+    
+    def is_valid(self) -> bool:
+        """Check that the board is still valid.
+        
+        1. All rows and columns contain no duplicate values
+        2. All squares have at least one possible value
+        """
+        def is_group_valid(group: np.ndarray) -> bool:
+            # not more than one value
+            values, counts = np.unique([g.shape_value for g in group], return_counts=True)
+            return all(count <= 1 for value, count in zip(values, counts) if value != 0)
+
+        rows_and_cols = list(self.board_state) + list(self.board_state.T)
+        groups_are_valid = all(is_group_valid(group) for group in rows_and_cols)
+
+        # Check all squares have possible values
+        have_possible_values = [square.sub_values != [] for square in self.all_squares()]
+        return all(have_possible_values) and groups_are_valid
+    
+    def all_squares(self) -> Iterable[Square]:
+        for row in self.board_state:
+            for square in row:
+                yield square
+
+    def assign_value(self, coords: tuple, value: int) -> None:
+        # assign square
+        square = self.board_state[coords]
+        square.shape_value = value
+        square.sub_values = [value]
+
+        # Remove value from all other squares in row and column
+        rows = self.board_state[coords[0], :]
+        cols = self.board_state[:, coords[1]]
+
+        # Use a set to avoid processing the same square twice (i.e., the intersection cell)
+        for square in np.concatenate((rows, cols)):
+            sub_vals = square.sub_values
+            if value in sub_vals:
+                sub_vals.remove(value)
+
 
 def read_board(file_path: Path) -> Board:
     """Create a Board object from a csv file path"""

@@ -29,7 +29,6 @@ TREE_PUZZLES_PATH = DOWNLOAD_BASE_PATH / "tree_logic_puzzles"
 def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
     while board.is_live:
-        LOG.info("Board is live")
         # We restart the loop if any of the rules causes a change
         # Try to run cheap tests first
         if is_only_one_square_available(board):
