@@ -1,5 +1,5 @@
 """Test the tree solver against all of the puzzles in the folder"""
-from tree_solver.sporcle_tree_logic_parser import DOWNLOAD_BASE_PATH
+from tree_solver import TREE_PUZZLES_PATH
 from game_solvers.tree_logic_puzzle.tree_solver import read_board, solve_board
 import time
 from game_solvers.logger import set_log_level, LOG
@@ -35,9 +35,9 @@ progress_bar = Progress(
 def main():
     start = time.time()
     with progress_bar as p:
-        task = p.add_task("Solving...", total=len(list(DOWNLOAD_BASE_PATH.iterdir())))
+        task = p.add_task("Solving...", total=len(list(TREE_PUZZLES_PATH.iterdir())))
 
-        for file_path in DOWNLOAD_BASE_PATH.iterdir():
+        for file_path in TREE_PUZZLES_PATH.iterdir():
             board = read_board(file_path)
             solved = solve_board(board)
 

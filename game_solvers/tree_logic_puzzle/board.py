@@ -208,6 +208,7 @@ def read_board(file_path: Path) -> Board:
     start_grid = np.genfromtxt(StringIO(data_txt), delimiter=",", dtype=int)
     return Board(start_grid)
 
+
 def generate_state(grid: np.ndarray) -> np.ndarray:
     """Create a board state from the grid"""
     state = np.empty(grid.shape, dtype=object)
@@ -215,4 +216,3 @@ def generate_state(grid: np.ndarray) -> np.ndarray:
         for j, shape_id in enumerate(row):
             state[i, j] = Square(shape_id=shape_id, coords=(i, j), symbol_id=0)
     return state
-
