@@ -1,7 +1,6 @@
-from board import read_board, Board
+from board import read_board, Board, Square
 import numpy as np
 from game_solvers.logger import LOG
-from itertools import combinations
 from game_solvers.sporcle_parser import DOWNLOAD_BASE_PATH
 from pathlib import Path
 
@@ -12,7 +11,6 @@ def solve_board(board: Board) -> bool:
     """Main loop to solve the board."""
     # Rules to run once
     buildings_seen_limits_max_square_value(board)
-    board.display()
 
     while board.is_live:
         changed = any(
@@ -21,7 +19,6 @@ def solve_board(board: Board) -> bool:
                 value_in_group_has_one_possible_square(board)
             ]
         )
-        print(board.is_live)
         if not changed:
             break
 
@@ -31,57 +28,47 @@ def solve_board(board: Board) -> bool:
 def square_has_one_possible_value(board: Board) -> bool:
     """If a square only has one possible value, assign it."""
     # Check all squares
+    LOG.info("Checking squares have one possible")
     updated = False
-    for square in board.all_squares():
+    for square in board.all_squares(active=True):
         sub_values = square.sub_values
         if len(square.sub_values) == 1:
             square_coords = square.coords
             value = sub_values[0]
             board.assign_value(square_coords, value)
-            LOG.info(f"Square at {square_coords} has only one possible value - {value}")
+            LOG.info(f"Square at {square_coords} has only one possible value: {value}")
             updated = True
-    board.display()
     return updated
 
 
 def value_in_group_has_one_possible_square(board: Board) -> bool:
     """If a value in a row/col can only fit in one square, assign it."""
 
-    def has_one_possible_square(group: np.ndarray):
-        """Return list of values which occur once in sub_values, with Square"""
-        res = []
-        all_values = np.concatenate([g.sub_values for g in group])
+    def has_one_possible_square(group: np.ndarray) -> list[tuple[Square, int]]:
+        """Return (Square, value) pairs where value appears only once in sub_values."""
+        all_values = np.concatenate([sq.sub_values for sq in group])
         values, counts = np.unique_counts(all_values)
-        for value, count in zip(values, counts):
-            if count != 1:
-                continue
-            value = int(value)
-            # One possible place for value
-            for square in group:
-                if value in square.sub_values:
-                    res.append((square, value))
-        return res
+        return [
+            (square, int(value))
+            for value, count in zip(values, counts)
+            for square in group
+            if count == 1 and value in square.sub_values
+        ]
 
     updated = False
     success_log_msg = "In {} {} the value {} is only possible in square at {}."
 
-    for row_idx, row in enumerate(board.board_state):
-        res = has_one_possible_square(row)
-        if res:
-            updated = True
-            for square, value in res:
-                coords = square.coords
-                LOG.info(success_log_msg.format("row", row_idx, value, coords))
-                board.assign_value(coords, value)
-    
-    for col_idx, col in enumerate(board.board_state.T):
-        res = has_one_possible_square(col)
-        if res:
-            updated = True
-            for square, value in res:
-                coords = square.coords
-                LOG.info(success_log_msg.format("column", col_idx, value, coords))
-                board.assign_value(coords, value)
+    for axis, label  in zip([board.board_state, board.board_state.T], ["row", "column"]):
+        for idx, group in enumerate(axis):
+            candidates = has_one_possible_square(group)
+            for square, value in candidates:
+                if square.shape_value != 0:
+                    # already assigned
+                    continue
+                updated = True
+                LOG.info(success_log_msg.format(label, idx, value, square.coords))
+                board.assign_value(square.coords, value)
+
     return updated
 
 
