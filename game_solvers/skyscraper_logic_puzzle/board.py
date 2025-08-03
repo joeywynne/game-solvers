@@ -33,6 +33,14 @@ class Board:
             "bottom_to_top": grid[3] 
         }
         self.name = file_path.name
+        # TODO: add _validate()
+
+    def _is_valid_state(self, state):
+        """Check that the state is valid for a tree game
+        1. No rules greater than board size
+        2. Rules are within the game board
+        """
+        return state
 
     def _generate_board(self, board_size: int) -> np.ndarray:
         """Generates an initial board"""
@@ -108,9 +116,6 @@ class Board:
 
     @property
     def is_live(self):
-        print(self.is_valid())
-        print(self.is_full)
-        self.display()
         return self.is_valid() and not self.is_full
     
     @property
@@ -142,9 +147,15 @@ class Board:
         have_possible_values = [square.sub_values != [] for square in self.all_squares()]
         return all(have_possible_values) and groups_are_valid
     
-    def all_squares(self) -> Iterable[Square]:
+    def all_squares(self, active: bool = False) -> Iterable[Square]:
+        """Return all squares in board.
+        
+        active: filters only to squares which are not completed.
+        """
         for row in self.board_state:
             for square in row:
+                if active and square.shape_value != 0:
+                    continue
                 yield square
 
     def assign_value(self, coords: tuple, value: int) -> None:
@@ -158,8 +169,10 @@ class Board:
         cols = self.board_state[:, coords[1]]
 
         # Use a set to avoid processing the same square twice (i.e., the intersection cell)
-        for square in np.concatenate((rows, cols)):
-            sub_vals = square.sub_values
+        for update_square in np.concatenate((rows, cols)):
+            if square == update_square:
+                continue
+            sub_vals = update_square.sub_values
             if value in sub_vals:
                 sub_vals.remove(value)
 
