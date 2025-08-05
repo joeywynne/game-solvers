@@ -22,15 +22,16 @@ class Board:
     Value represents the height of building if game square or the clue if not
     """
     def __init__(self, grid: np.ndarray, file_path: Path):
-        grid_size = grid.shape[1]
+        rules = grid[:4, :]
+        game_grid = grid[4:, :]
 
-        self.game_size = grid_size
-        self.board_state = self._generate_board(grid_size)
+        self.game_size = game_grid.shape[1]
+        self.board_state = self._generate_board(game_grid)
         self.visible_buildings = {
-            "top_to_bottom": grid[0],
-            "left_to_right": grid[1],
-            "right_to_left": grid[2],
-            "bottom_to_top": grid[3] 
+            "top_to_bottom": rules[0],
+            "left_to_right": rules[1],
+            "right_to_left": rules[2],
+            "bottom_to_top": rules[3] 
         }
         self.name = file_path.name
         # TODO: add _validate()
@@ -42,12 +43,16 @@ class Board:
         """
         return state
 
-    def _generate_board(self, board_size: int) -> np.ndarray:
+    def _generate_board(self, game_grid: np.ndarray) -> np.ndarray:
         """Generates an initial board"""
-        board = np.empty((board_size, board_size), dtype=object)
-        for i, row in enumerate(board):
-            for j, _ in enumerate(row):
-                board[i, j] = Square(0, list(i + 1 for i in range(board_size)), (i, j))
+        board = np.empty(game_grid.shape, dtype=object)
+        board_size = game_grid.shape[1]
+        for i, row in enumerate(game_grid):
+            for j, game_value in enumerate(row):
+                if game_value == 0: 
+                    board[i, j] = Square(0, list(i + 1 for i in range(board_size)), (i, j))
+                else:
+                    board[i, j] = Square(game_value, [game_value], (i, j))
         return board
 
 

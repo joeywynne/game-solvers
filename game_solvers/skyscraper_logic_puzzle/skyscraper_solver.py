@@ -166,9 +166,15 @@ def buildings_seen_limits_max_square_value(board: Board) -> None:
 
 if __name__ == "__main__":
     for csv_path in SKYSCRAPER_PUZZLES_PATH.iterdir():
-        csv_path = SKYSCRAPER_PUZZLES_PATH / "skyscrapers-logic-puzzle-i.csv"
+        LOG.info(f"Solving board: {csv_path}")
         board = read_board(csv_path)
         solved = solve_board(board)
-        if not solved or solved:
+        if not solved:
             board.display(solved)
-            exit()
+        board.display()
+        exit()
+
+
+# 14 fails - does not understand the placed building
+# TODO: implement placed buildings
+# 1,2,3,4... -> A,B,C,D,...
