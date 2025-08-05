@@ -38,7 +38,7 @@ def parse_skyscraper_game_page(url: str) -> np.ndarray:
     visible_squares = {
         (value["y"], value["x"]): value["text"]
         for value in cells.values()
-        if "pre_visible" in value["options"] and value["options"]["pre_visible"] == 'true'
+        if "pre_visible" in value["options"] and value["options"]["pre_visible"] in ("true", "1")
     }
 
     # Aim to save a csv form with the 4 rows representing the clues
@@ -77,5 +77,5 @@ def alpha_to_num(char: str | float | int) -> int:
 
 if __name__ == "__main__":
     download_sporcle_games(SKYSCRAPER_SEARCH_STR, parse_skyscraper_game_page, "skyscraper_logic_puzzles")
-    #d = parse_skyscraper_game_page("https://www.sporcle.com/games/Katie_Wandering/skyscrapers-logic-puzzle-16")
+    #d = parse_skyscraper_game_page("https://www.sporcle.com/games/Katie_Wandering/skyscrapers-logic-puzzle-48")
     #print(d)

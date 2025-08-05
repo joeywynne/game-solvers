@@ -171,10 +171,3 @@ if __name__ == "__main__":
         solved = solve_board(board)
         if not solved:
             board.display(solved)
-        board.display()
-        exit()
-
-
-# 14 fails - does not understand the placed building
-# TODO: implement placed buildings
-# 1,2,3,4... -> A,B,C,D,...
